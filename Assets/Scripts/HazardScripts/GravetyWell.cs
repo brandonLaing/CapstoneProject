@@ -20,7 +20,7 @@ public class GravetyWell : MonoBehaviour
 
   private GameObject player;
 
-  private TouchingGround playerTouchingScript;
+  //private TouchingGround playerTouchingScript;
 
   #endregion
 
@@ -30,14 +30,14 @@ public class GravetyWell : MonoBehaviour
     gravetyWellColliderScipt = gravetyWellCollider.GetComponent<GravetyWellCollider>();
 
     player = GameObject.FindGameObjectWithTag(playerTag);
-    playerTouchingScript = player.GetComponent<TouchingGround>();
+    //playerTouchingScript = player.GetComponent<TouchingGround>();
 
   } // end Awake
 
   private void Update()
   {
     // if player isn't touching ground and is in collider 
-    if (!playerTouchingScript.touchingGround && gravetyWellColliderScipt.playerColliding)
+    //if (!playerTouchingScript.touchingGround && gravetyWellColliderScipt.playerColliding)
     {
       player.GetComponent<Rigidbody>().AddForce((transform.position - player.transform.position) * forceAdded);
 

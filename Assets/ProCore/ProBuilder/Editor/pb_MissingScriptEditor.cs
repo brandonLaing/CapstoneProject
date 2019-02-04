@@ -133,12 +133,18 @@ namespace ProBuilder2.EditorCommon
 				{
 					if(go.GetComponents<Component>().Any(x => x == null) && !unfixable.Contains(go))
 					{
-						if(	(PrefabUtility.GetPrefabType(go) == PrefabType.PrefabInstance ||
-							 PrefabUtility.GetPrefabType(go) == PrefabType.Prefab ) )
-						{
-							GameObject pref = (GameObject)PrefabUtility.GetPrefabParent(go);
+#pragma warning disable CS0618 // Type or member is obsolete
+            if (	(PrefabUtility.GetPrefabType(go) == PrefabType.PrefabInstance ||
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
+               PrefabUtility.GetPrefabType(go) == PrefabType.Prefab ))
+#pragma warning restore CS0618 // Type or member is obsolete
+            {
+#pragma warning disable CS0618 // Type or member is obsolete
+              GameObject pref = (GameObject)PrefabUtility.GetPrefabParent(go);
+#pragma warning restore CS0618 // Type or member is obsolete
 
-							if(pref && (pref.GetComponent<pb_Object>() || pref.GetComponent<pb_Entity>()))
+              if (pref && (pref.GetComponent<pb_Object>() || pref.GetComponent<pb_Entity>()))
 							{
 								unfixable.Add(go);
 								continue;

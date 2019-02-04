@@ -13,8 +13,10 @@ namespace ProBuilder2.EditorCommon
 	{
 		const string PROBUILDER_VERSION_URL = "http://procore3d.github.io/probuilder2/current.txt";
 		const string pbLastWebVersionChecked = "pbLastWebVersionChecked";
-		static WWW updateQuery;
-		static bool calledFromMenu = false;
+#pragma warning disable CS0618 // Type or member is obsolete
+    static WWW updateQuery;
+#pragma warning restore CS0618 // Type or member is obsolete
+    static bool calledFromMenu = false;
 
 		static pb_UpdateCheck()
 		{
@@ -36,8 +38,10 @@ namespace ProBuilder2.EditorCommon
 		{
 			if(updateQuery == null)
 			{
-				updateQuery = new WWW(PROBUILDER_VERSION_URL);
-				EditorApplication.update += Update;
+#pragma warning disable CS0618 // Type or member is obsolete
+        updateQuery = new WWW(PROBUILDER_VERSION_URL);
+#pragma warning restore CS0618 // Type or member is obsolete
+        EditorApplication.update += Update;
 			}
 		}
 

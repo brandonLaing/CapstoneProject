@@ -92,11 +92,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6884381386535896371}
   - component: {fileID: 3477936724798436895}
+  - component: {fileID: 8893373835673135032}
   - component: {fileID: 3965138058949967408}
   - component: {fileID: 6600838776748829363}
+  - component: {fileID: 1049750278910248193}
   - component: {fileID: 5375563406626847825}
   - component: {fileID: 8751514226808614098}
-  - component: {fileID: 1049750278910248193}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -138,8 +139,21 @@ MonoBehaviour:
   invertX: 0
   invertY: 1
   playerCamera: {fileID: 7093954774411463515}
-  doJump: 0
-  groundObjects: []
+--- !u!114 &8893373835673135032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5552022049652437870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed2c49dc7852d345a3ccd96e6a49d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 0}
+  projectionLocation: {fileID: 0}
+  platformRange: 10
 --- !u!54 &3965138058949967408
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,6 +184,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1049750278910248193
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5552022049652437870}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.2, z: 0.6}
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!33 &5375563406626847825
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -215,16 +242,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1049750278910248193
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5552022049652437870}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.2, z: 0.6}
-  m_Center: {x: 0, y: -1, z: 0}

@@ -72,8 +72,10 @@ namespace ProBuilder2.Actions
 				if(ren != null)
 					pb_EditorUtility.SetSelectionRenderState(ren, pb_EditorUtility.GetSelectionRenderState());
 
-				if( PrefabUtility.GetPrefabType(go) == PrefabType.Prefab )
-					return;
+#pragma warning disable CS0618 // Type or member is obsolete
+        if ( PrefabUtility.GetPrefabType(go) == PrefabType.Prefab)
+#pragma warning restore CS0618 // Type or member is obsolete
+          return;
 
 				pb_EditorUtility.VerifyMesh(pb);
 
