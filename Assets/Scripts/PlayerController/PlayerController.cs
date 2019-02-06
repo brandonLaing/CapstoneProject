@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
   #region Variables
+  [Header("Movement")]
   /// <summary>
   /// The players WASD movement speed
   /// </summary>'
@@ -20,6 +21,14 @@ public class PlayerController : MonoBehaviour
   [Range(2,10)]
   public float jumpVelocity;
 
+  /// <summary>
+  /// The ammount of force that is added onto the player as they fall
+  /// </summary>
+  [Tooltip("The ammount of force that is added onto the player as they fall")]
+  [Range(1, 5)]
+  public float fallMultiplier = 2.5F;
+
+  [Header("Camera")]
   /// <summary>
   /// Rotation speed of the mouse look
   /// </summary>
@@ -38,6 +47,7 @@ public class PlayerController : MonoBehaviour
   [Tooltip("If the mouse should invert its look")]
   public bool invertX, invertY;
 
+  [Header("Components")]
   /// <summary>
   /// Reference to the players childed camera
   /// </summary>
@@ -165,8 +175,8 @@ public class PlayerController : MonoBehaviour
   private void FixedUpdate()
   {
     UpdatePosition();
-    if (doJump)
-      PlayerJump();
+    PlayerJump();
+    BetterFall();
   }
 
   private void UpdatePosition()
@@ -176,8 +186,19 @@ public class PlayerController : MonoBehaviour
 
   private void PlayerJump()
   {
-    doJump = false;
-    rb.velocity += transform.up * jumpVelocity;
+    if (doJump)
+    {
+      doJump = false;
+      rb.velocity += transform.up * jumpVelocity;
+    }
+  }
+
+  private void BetterFall()
+  {
+    if (rb.velocity.y < 0)
+    {
+      rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+    }
   }
   #endregion
 
