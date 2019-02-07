@@ -51,6 +51,11 @@ public class PlayerPlatformGun : MonoBehaviour
   }
 
   public ProjectionType projectionType;
+
+  public Material[] materials;
+  public GameObject[] platformPrefabs;
+
+  public float scrollMultiplier;
   #endregion
 
   private void Start()
@@ -89,7 +94,7 @@ public class PlayerPlatformGun : MonoBehaviour
       CurrentGunState = GunState.Standby;
 
     // check for the zoom of the gun
-    PlatformRange += Input.GetAxis("Mouse ScrollWheel");
+    PlatformRange += (Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime) * scrollMultiplier;
 
     // check if the type of platform has changed
     CyclingCheck();
@@ -103,11 +108,17 @@ public class PlayerPlatformGun : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.Alpha4))
       projectionType = ProjectionType.MovingPlatform;
 
-
-
     // update the material of the platform
+    projectionLocation.GetComponent<MeshRenderer>().material = materials[(int)projectionType];
 
     // set the transform of the projection
+    projectionLocation.position = cameraTransform.position + cameraTransform.forward * PlatformRange;
+
+    // instantiate platform
+    if (Input.GetMouseButtonDown(1))
+    {
+      Instantiate(platformPrefabs[(int)projectionType], projectionLocation.position, projectionLocation.rotation);
+    }
   }
 
   /// <summary>
@@ -130,6 +141,8 @@ public class PlayerPlatformGun : MonoBehaviour
       if (currentState >= (int)ProjectionType.Length)
         currentState = 0;
     }
+
+    projectionType = (ProjectionType)currentState;
   }
 
   private void HouseKeeping()

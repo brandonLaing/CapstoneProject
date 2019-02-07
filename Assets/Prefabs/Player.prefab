@@ -91,8 +91,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6884381386535896371}
-  - component: {fileID: 3477936724798436895}
+  - component: {fileID: 4002914652306990648}
   - component: {fileID: 8893373835673135032}
+  - component: {fileID: 6507061106259792937}
+  - component: {fileID: 4731876628366877544}
+  - component: {fileID: 2466920957737499564}
   - component: {fileID: 3965138058949967408}
   - component: {fileID: 6600838776748829363}
   - component: {fileID: 1049750278910248193}
@@ -120,7 +123,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3477936724798436895
+--- !u!114 &4002914652306990648
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,16 +132,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5552022049652437870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f423b25fab83843a4c8a90a707e7c2, type: 3}
+  m_Script: {fileID: 11500000, guid: eb17d22f5ed55654186ce62f63a9d66d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  jumpVelocity: 5
-  cameraXSpeed: 100
-  cameraYSpeed: 100
-  invertX: 0
-  invertY: 1
-  playerCamera: {fileID: 7093954774411463515}
 --- !u!114 &8893373835673135032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,9 +148,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed2c49dc7852d345a3ccd96e6a49d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 0}
+  cameraTransform: {fileID: 7093954774411463515}
   projectionLocation: {fileID: 0}
-  platformRange: 10
+  minPlatformRange: 5
+  maxPlatformRange: 20
+  _platformRange: 10
+  projectionType: 0
+  materials:
+  - {fileID: 2100000, guid: 03b1ea02b06da034e84223879310bf15, type: 2}
+  - {fileID: 2100000, guid: f8bce62ac332e9647afaaf5be11568d4, type: 2}
+  - {fileID: 2100000, guid: aa1f588d6017327408d7ae9dbabb9712, type: 2}
+  - {fileID: 2100000, guid: a01c75801dca16d4eb86cde9ab714ffd, type: 2}
+  platformPrefabs:
+  - {fileID: 1407063438944597548, guid: b976e3185f408514dbefac187d1b401f, type: 3}
+  - {fileID: 739408718564184280, guid: 353f812ea0a4b614f9b0d4b5143a1d25, type: 3}
+  - {fileID: 420462267554395618, guid: 1c1377559a53b1146bd9a671e55e08db, type: 3}
+  - {fileID: 3202418698154251690, guid: 533f8c459e8b7b94398ff9194a755254, type: 3}
+  scrollMultiplier: 100
+--- !u!114 &6507061106259792937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5552022049652437870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5751ac615bb7c94ba0e278a57f02938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraXSpeed: 100
+  cameraYSpeed: 100
+  invertX: 0
+  invertY: 1
+--- !u!114 &4731876628366877544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5552022049652437870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8600e165fdad542a6716b0d1ed4af7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpVelocity: 8
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 1.5
+--- !u!114 &2466920957737499564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5552022049652437870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205935f071cb4184fa1e19176f4a3ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &3965138058949967408
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -169,7 +223,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!136 &6600838776748829363
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -195,7 +249,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.2, z: 0.6}
+  m_Size: {x: 0.6, y: 0.5, z: 0.6}
   m_Center: {x: 0, y: -1, z: 0}
 --- !u!33 &5375563406626847825
 MeshFilter:
