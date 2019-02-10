@@ -34,7 +34,7 @@ public class CheckpointPlatform : MonoBehaviour
       checkpointManager.GetComponent<CheckpointManager>().currentCheckpoint = gameObject;
       checkpointManager.GetComponent<CheckpointManager>().checkColors = true;
 
-      collision.gameObject.GetComponentInChildren<PlatformProjectorScript>().ResetList();
+      //collision.gameObject.GetComponentInChildren<PlatformProjectorScript>().ResetList();
     }
 
   }

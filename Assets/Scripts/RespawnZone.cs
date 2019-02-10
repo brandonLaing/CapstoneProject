@@ -31,7 +31,7 @@ public class RespawnZone : MonoBehaviour
 
       checkpointManager.GetComponent<CheckpointManager>().SpawnPlayer();
 
-      other.GetComponentInChildren<PlatformProjectorScript>().DestroyObjectsInList();
+      //other.GetComponentInChildren<PlatformProjectorScript>().DestroyObjectsInList();
 
     }
   } // end OnTriggerEnter
