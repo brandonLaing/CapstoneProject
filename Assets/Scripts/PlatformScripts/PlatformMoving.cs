@@ -69,13 +69,9 @@ public class PlatformMoving : MonoBehaviour
     }
 
     if (moveForward)
-    {
       transform.position += transform.forward * (moveSpeed * Time.fixedDeltaTime);
-    }
     else
-    {
       transform.position -= transform.forward * (moveSpeed * Time.fixedDeltaTime);
-    }
   }
 
   private void OnCollisionEnter(Collision collision)
@@ -83,13 +79,9 @@ public class PlatformMoving : MonoBehaviour
     if (collision.gameObject.GetComponent<Rigidbody>() && !collision.gameObject.GetComponent<Rigidbody>().isKinematic)
     {
       if (collision.gameObject.CompareTag("Player"))
-      {
         collision.transform.parent.parent = this.transform;
-      }
       else
-      {
         collision.transform.parent = this.transform;
-      }
     }
   }
 
@@ -97,7 +89,7 @@ public class PlatformMoving : MonoBehaviour
   {
     if (collision.transform.parent == this.transform)
       collision.transform.parent = null;
-    else if (collision.transform.parent != null && collision.transform.parent.parent != this.transform)
+    else if (collision.transform.parent != null && collision.transform.parent.parent == this.transform)
       collision.transform.parent.parent = null;
   }
 }
