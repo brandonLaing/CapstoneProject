@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum GunState
 {
-  Standby, Triggered
+  Standby, Triggered, PlaceingMovingEndPoint
 }
 public enum ProjectionType
 {
@@ -56,6 +56,8 @@ public class PlayerPlatformGun : MonoBehaviour
   public GameObject[] platformPrefabs;
 
   public float scrollMultiplier;
+
+  public GameObject currentMovingPlatform;
   #endregion
 
   private void Start()
@@ -72,6 +74,9 @@ public class PlayerPlatformGun : MonoBehaviour
         break;
       case GunState.Triggered:
         TriggeredStateLogic();
+        break;
+      case GunState.PlaceingMovingEndPoint:
+        PlaceingEndPoint();
         break;
     }
   }
@@ -94,7 +99,6 @@ public class PlayerPlatformGun : MonoBehaviour
       CurrentGunState = GunState.Standby;
 
     // check for the zoom of the gun
-    PlatformRange += (Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime) * scrollMultiplier;
 
     // check if the type of platform has changed
     CyclingCheck();
@@ -111,14 +115,30 @@ public class PlayerPlatformGun : MonoBehaviour
     // update the material of the platform
     projectionLocation.GetComponent<MeshRenderer>().material = materials[(int)projectionType];
 
-    // set the transform of the projection
-    projectionLocation.position = cameraTransform.position + cameraTransform.forward * PlatformRange;
+    UpdateProjectionLocation();
 
     // instantiate platform
     if (Input.GetMouseButtonDown(1))
     {
-      Instantiate(platformPrefabs[(int)projectionType], projectionLocation.position, projectionLocation.rotation);
+      GameObject newObject = Instantiate(platformPrefabs[(int)projectionType], projectionLocation.position, projectionLocation.rotation);
+      if (projectionType == ProjectionType.MovingPlatform)
+      {
+        CurrentGunState = GunState.PlaceingMovingEndPoint;
+        currentMovingPlatform = newObject;
+      }
     }
+  }
+
+  private void UpdateProjectionLocation()
+  {
+    PlatformRange += (Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime) * scrollMultiplier;
+
+    // set the transform of the projection
+    projectionLocation.position = cameraTransform.position + cameraTransform.forward * PlatformRange;
+
+    // update the rotation to the players angle
+    Vector3 newRotation = transform.eulerAngles;
+    projectionLocation.eulerAngles = newRotation;
   }
 
   /// <summary>
@@ -145,8 +165,20 @@ public class PlayerPlatformGun : MonoBehaviour
     projectionType = (ProjectionType)currentState;
   }
 
-  private void HouseKeeping()
+  private void PlaceingEndPoint()
   {
+    UpdateProjectionLocation();
 
+    if (Input.GetMouseButtonDown(1))
+    {
+      currentMovingPlatform.GetComponent<PlatformMoving>().AddEndPoint(projectionLocation.transform.position);
+      CurrentGunState = GunState.Triggered;
+    }
+
+    if (Input.GetMouseButtonDown(0))
+    {
+      Destroy(currentMovingPlatform);
+      CurrentGunState = GunState.Standby;
+    }
   }
 }

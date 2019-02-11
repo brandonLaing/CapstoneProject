@@ -16,11 +16,26 @@ public class PlatformMoving : MonoBehaviour
   public bool movingToEnd;
   public float swapCooldown = 1F;
   public float swapTimer = 0;
+  public bool startMoving;
+
+  private void Start()
+  {
+    startPosition = transform.position;
+  }
+
+  public void AddEndPoint(Vector3 endPos)
+  {
+    endPosition = endPos;
+    startMoving = true;
+  }
 
   private void FixedUpdate()
   {
+    if (startMoving)
+    {
+      PositionsBased();
+    }
     //TimeBased();
-    PositionsBased();
   }
 
   private void PositionsBased()
