@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallTileManager : MonoBehaviour
+public class WallTileManager : MonoBehaviour, ILockable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  public bool puzzleLocked = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  public List<WallTileSuccessTracker> puzzleTiles = new List<WallTileSuccessTracker>();
+
+  public PuzzleEffect puzzleEffect;
+
+  public void Lock()
+  {
+    puzzleLocked = true;
+  }
+
+  public void PuzzleComplete(bool completed)
+  {
+    puzzleEffect.Solved(!completed);
+  }
 }
