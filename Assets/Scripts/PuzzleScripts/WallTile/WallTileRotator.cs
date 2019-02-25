@@ -112,6 +112,8 @@ public class WallTileRotator : MonoBehaviour
   /// </summary>
   public void IncrementState()
   {
+    successTracker.CheckPassed = false;
+
     if ((WallTileState)((int)tileCurrentState + 1) >= WallTileState.Length)
       tileCurrentState = (WallTileState)0;
     else
