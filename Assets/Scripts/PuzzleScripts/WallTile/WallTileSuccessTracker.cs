@@ -82,21 +82,26 @@ public class WallTileSuccessTracker : MonoBehaviour
   {
     if (rotator.tileCurrentState == tileCorrectState)
     {
+      // if there is no previous tiles return true
       if (previousTiles.Count == 0)
       {
         CheckPassed = true;
         return;
       }
 
+      // for ever previous tile
       for (int i = 0; i < previousTiles.Count; i++)
       {
         WallTileSuccessTracker previousTracker = null;
-        if (previousTracker != null && previousTracker.CheckPassed == false)
+
+        // if one is fale set check passed to false and return from loop
+        if (previousTracker.CheckPassed == false)
         {
           CheckPassed = false;
           return;
         }
       }
+
       CheckPassed = true;
     }
     else
