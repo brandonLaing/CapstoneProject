@@ -41,9 +41,9 @@ public class PlayerInteractionChecker : MonoBehaviour
       hitThisFrame = true;
       if (Input.GetKeyDown(KeyCode.F))
       {
-        if (hit.transform.GetComponent<IInteractable>() != null && hit.transform.GetComponent<IInteractable>().AbleToInteract)
+        if (hit.transform.GetComponent<IInteractable>() != null)
           hit.transform.GetComponent<IInteractable>().Interact();
-        else if (hit.transform.GetComponentInParent<IInteractable>() != null && hit.transform.GetComponentInParent<IInteractable>().AbleToInteract)
+        else if (hit.transform.GetComponentInParent<IInteractable>() != null)
           hit.transform.GetComponentInParent<IInteractable>().Interact();
       }
     }
