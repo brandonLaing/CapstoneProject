@@ -35,11 +35,10 @@ public class WallTileInteractor : MonoBehaviour, IInteractable
   {
     if (AbleToInteract)
     {
-      successTracker.CheckPassed = false;
-      rotator.IncrementState();
-
       if (otherTileToRotate != null)
         otherTileToRotate.IncrementState();
+      else
+        rotator.IncrementState();
     }
   }
 }
