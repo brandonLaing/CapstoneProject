@@ -92,9 +92,9 @@ public class WallTileSuccessTracker : MonoBehaviour
       // for ever previous tile
       for (int i = 0; i < previousTiles.Count; i++)
       {
-        WallTileSuccessTracker previousTracker = null;
+        WallTileSuccessTracker previousTracker = previousTiles[i];
 
-        // if one is fale set check passed to false and return from loop
+        // if one is false set check passed to false and return from loop
         if (previousTracker.CheckPassed == false)
         {
           CheckPassed = false;
