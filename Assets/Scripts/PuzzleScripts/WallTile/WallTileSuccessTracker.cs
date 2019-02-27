@@ -25,7 +25,7 @@ public class WallTileSuccessTracker : MonoBehaviour
   /// </summary>
   private bool _checkPassed = false;
 
-  public WallTileSuccessTracker previousTile;
+  public List<WallTileSuccessTracker> previousTiles = new List<WallTileSuccessTracker>();
   public WallTileSuccessTracker nextTile;
 
   private WallTileRotator rotator;
@@ -82,14 +82,46 @@ public class WallTileSuccessTracker : MonoBehaviour
   {
     if (rotator.tileCurrentState == tileCorrectState)
     {
-      if (previousTile == null)
+      // if there is no previous tiles return true
+      if (previousTiles.Count == 0)
+      {
         CheckPassed = true;
-      else if (previousTile.CheckPassed)
-        CheckPassed = true;
-      else
-        CheckPassed = false;
+        return;
+      }
+
+      // for ever previous tile
+      for (int i = 0; i < previousTiles.Count; i++)
+      {
+        WallTileSuccessTracker previousTracker = previousTiles[i];
+
+        // if one is false set check passed to false and return from loop
+        if (previousTracker.CheckPassed == false)
+        {
+          CheckPassed = false;
+          return;
+        }
+      }
+
+      CheckPassed = true;
     }
     else
       CheckPassed = false;
   }
+
+  #region Achived Version
+  //public void CheckForCorrectState()
+  //{
+  //  if (rotator.tileCurrentState == tileCorrectState)
+  //  {
+  //    if (previousTiles == null)
+  //      CheckPassed = true;
+  //    else if (previousTiles.CheckPassed)
+  //      CheckPassed = true;
+  //    else
+  //      CheckPassed = false;
+  //  }
+  //  else
+  //    CheckPassed = false;
+  //}
+  #endregion
 }
