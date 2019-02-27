@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8916352309957860526}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 2.35}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6107808825175549083}
@@ -196,7 +196,7 @@ MonoBehaviour:
   - {fileID: 1407063438944597548, guid: b976e3185f408514dbefac187d1b401f, type: 3}
   - {fileID: 739408718564184280, guid: 353f812ea0a4b614f9b0d4b5143a1d25, type: 3}
   - {fileID: 420462267554395618, guid: 1c1377559a53b1146bd9a671e55e08db, type: 3}
-  - {fileID: 3202418698154251690, guid: 533f8c459e8b7b94398ff9194a755254, type: 3}
+  - {fileID: 9104212703564646946, guid: d63c84163d5a13746866120d511b435c, type: 3}
   scrollMultiplier: 100
   currentMovingPlatform: {fileID: 0}
 --- !u!114 &7853213515548392425
@@ -354,6 +354,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8050600581818363446}
     m_Modifications:
+    - target: {fileID: 5035789879588041605, guid: 855682d43f80694478d58a83531406c7,
+        type: 3}
+      propertyPath: m_Name
+      value: PlatformProjection
+      objectReference: {fileID: 0}
     - target: {fileID: 680167126863705335, guid: 855682d43f80694478d58a83531406c7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -408,16 +413,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5035789879588041605, guid: 855682d43f80694478d58a83531406c7,
-        type: 3}
-      propertyPath: m_Name
-      value: PlatformProjection
-      objectReference: {fileID: 0}
-    - target: {fileID: 5035789879588041605, guid: 855682d43f80694478d58a83531406c7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 855682d43f80694478d58a83531406c7, type: 3}

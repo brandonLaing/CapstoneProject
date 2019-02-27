@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTime: 5
+  currentMoveTime: 0
   moveSpeed: 1
+  moveForward: 1
+  startPosition: {x: 0, y: 0, z: 0}
+  endPosition: {x: 0, y: 0, z: 0}
+  movingToEnd: 0
+  swapCooldown: 1
+  swapTimer: 0
+  startMoving: 0
 --- !u!1001 &3210046672045566492
 PrefabInstance:
   m_ObjectHideFlags: 0
