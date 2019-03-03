@@ -147,7 +147,14 @@ public class PlayerPlatformGun : MonoBehaviour
     PlatformRange += (Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime) * scrollMultiplier;
 
     // set the transform of the projection
-    projectionLocation.position = cameraTransform.position + cameraTransform.forward * PlatformRange;
+    RaycastHit hit;
+    if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, PlatformRange))
+    {
+      projectionLocation.position = hit.point;
+    }
+    else
+      projectionLocation.position = cameraTransform.position + cameraTransform.forward * PlatformRange;
+
 
     // update the rotation to the players angle
     Vector3 newRotation = transform.eulerAngles;
