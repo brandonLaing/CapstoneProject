@@ -5,11 +5,13 @@ using UnityEngine;
 public class PuzzleEffect_Door : PuzzleEffect
 {
   public GameObject[] doorsToEffect;
-  public override void Solved(bool solved)
+  public override void Solved(bool statusOfDoor)
   {
+    Debug.Log("Puzzle Solved");
+
     for (int i = 0; i < doorsToEffect.Length; i++)
     {
-      doorsToEffect[i].SetActive(solved);
+      doorsToEffect[i].SetActive(statusOfDoor);
     }
   }
 }

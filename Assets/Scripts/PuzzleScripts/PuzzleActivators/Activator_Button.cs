@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Activator_Button : Activator, IInteractable
 {
+  public Transform[] objectToActivate;
+
   private bool _ableToInteract = true;
   public bool AbleToInteract
   {
@@ -13,12 +15,20 @@ public class Activator_Button : Activator, IInteractable
 
   public override void Activate()
   {
-    throw new System.NotImplementedException();
+    for (int i = 0; i < objectToActivate.Length; i++)
+    {
+      objectToActivate[i].GetComponent<IActivateable>().Activate();
+    }
   }
 
   public void Interact()
   {
     if (AbleToInteract)
       Activate();
+  }
+
+  public override void Lock()
+  {
+    AbleToInteract = false;
   }
 }

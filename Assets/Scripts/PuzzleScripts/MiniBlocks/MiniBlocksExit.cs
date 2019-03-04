@@ -2,17 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiniBlocksExit : MonoBehaviour
+public class MiniBlocksExit : MonoBehaviour, IActivateable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  public float blocksCollected;
+  public float numberOfBlocksForSucess;
 
-    // Update is called once per frame
-    void Update()
+  public MiniBlocksManager manager;
+
+  public void Activate()
+  {
+    Debug.Log("activate Called on exit");
+
+    blocksCollected = 0;
+  }
+
+  private void OnTriggerEnter(Collider other)
+  {
+    if (other.CompareTag("MiniBlock"))
     {
-        
+      blocksCollected++;
+      Destroy(other.gameObject);
+      ValidateSuccess();
     }
+  }
+
+  private void ValidateSuccess()
+  {
+    if (numberOfBlocksForSucess == blocksCollected)
+    {
+      manager.CheckPassed();
+    }
+  }
 }
