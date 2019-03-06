@@ -36,7 +36,7 @@ public class PlayerInteractionChecker : MonoBehaviour
     hitThisFrame = false;
     RaycastHit hit;
 
-    if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, range, targetlayer))
+    if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, range, (int)targetlayer))
     {
       hitThisFrame = true;
       if (Input.GetKeyDown(KeyCode.F))

@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - SceneTransitioner
   - PlayerRoot
   - MiniBlock
+  - SceneController
   layers:
   - Default
   - TransparentFX
@@ -19,8 +19,8 @@ TagManager:
   - PostProcessing
   - Ground
   - IgnorePlayer
+  - IgnoreByGun
   - Player
-  - 
   - 
   - 
   - 
