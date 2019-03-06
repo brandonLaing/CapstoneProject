@@ -22,6 +22,9 @@ public class PlayerPlatformGun : MonoBehaviour
 
   public float minPlatformRange, maxPlatformRange;
   public float _platformRange = 10;
+
+  public LayerMask layerMask;
+
   public float PlatformRange
   {
     get
@@ -148,7 +151,7 @@ public class PlayerPlatformGun : MonoBehaviour
 
     // set the transform of the projection
     RaycastHit hit;
-    if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, PlatformRange))
+    if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, PlatformRange, layerMask))
     {
       projectionLocation.position = hit.point;
     }
@@ -208,22 +211,22 @@ public class PlayerPlatformGun : MonoBehaviour
   {
     if (platformQue.Count >= 3)
     {
-      Debug.Log("Starting to remove something from the que");
+      //Debug.Log("Starting to remove something from the que");
       Transform objectToDestroy = platformQue.Dequeue();
 
       while (objectToDestroy.childCount > 0)
         for (int i = 0; i < objectToDestroy.childCount; i++)
         {
-          Debug.Log("Destroying children");
+          //Debug.Log("Destroying children");
 
           objectToDestroy.GetChild(i).parent = null;
         }
 
-      Debug.Log("Destroying platform " + objectToDestroy.name);
+      //Debug.Log("Destroying platform " + objectToDestroy.name);
       Destroy(objectToDestroy.gameObject);
     }
 
-    Debug.Log($"Adding {newPlatform.name} to the que");
+    //Debug.Log($"Adding {newPlatform.name} to the que");
     platformQue.Enqueue(newPlatform);
   }
 }

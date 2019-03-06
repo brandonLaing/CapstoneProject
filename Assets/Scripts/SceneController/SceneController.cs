@@ -25,7 +25,7 @@ public class SceneController : MonoBehaviour
   /// </summary>
   public void MovePlayerOver()
   {
-    Debug.Log($"Moving Player over from {currentScene} to {nextScene}");
+    //Debug.Log($"Moving Player over from {currentScene} to {nextScene}");
   
     GameObject[] sceneControllers = GameObject.FindGameObjectsWithTag("SceneController");
     SceneController nextController = null;
@@ -64,7 +64,7 @@ public class SceneController : MonoBehaviour
   /// </summary>
   private void SetCurrentSceneActive()
   {
-    Debug.Log($"Setting {currentScene} as active");
+    //Debug.Log($"Setting {currentScene} as active");
     SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentScene));
   }
 
@@ -73,20 +73,20 @@ public class SceneController : MonoBehaviour
   /// </summary>
   public void ClosePreviousScene()
   {
-    Debug.Log($"Closing scene {previousScene}");
+    //Debug.Log($"Closing scene {previousScene}");
     entranceDoor.SetActive(true);
     UnloadPreviousScene();
   }
 
   private void SendPlayer(GameObject player, SceneController controller)
   {
-    Debug.Log($"Sending player over to {nextScene}");
+    //Debug.Log($"Sending player over to {nextScene}");
     controller.RecivePlayer(player);
   }
 
   private void RecivePlayer(GameObject player)
   {
-    Debug.Log($"Reciving player on {currentScene}");
+    //Debug.Log($"Reciving player on {currentScene}");
 
     player.transform.parent = this.transform;
     player.transform.parent = null;
@@ -96,7 +96,7 @@ public class SceneController : MonoBehaviour
   {
     if (other.CompareTag("Player"))
     {
-      Debug.Log($"{currentScene} trigger entered");
+      //Debug.Log($"{currentScene} trigger entered");
       collisionChecker.SetActive(false);
       MovePlayerOver();
     }
@@ -108,7 +108,7 @@ public class SceneController : MonoBehaviour
   /// </summary>
   public void LoadNextScene()
   {
-    Debug.Log($"Starting load {nextScene}");
+    //Debug.Log($"Starting load {nextScene}");
 
     if (nextScene != string.Empty)
       StartCoroutine(LoadSceneAsync());
@@ -121,7 +121,7 @@ public class SceneController : MonoBehaviour
   /// </summary>
   public void UnloadPreviousScene()
   {
-    Debug.Log($"Starting unload previous scene {previousScene}");
+    //Debug.Log($"Starting unload previous scene {previousScene}");
     StartCoroutine(UnloadSceneAsync());
   }
 
