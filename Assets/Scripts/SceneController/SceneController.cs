@@ -23,10 +23,8 @@ public class SceneController : MonoBehaviour
   /// <summary>
   /// Moves player to next scene
   /// </summary>
-  public void MovePlayerOver()
+  private void MovePlayerOver()
   {
-    //Debug.Log($"Moving Player over from {currentScene} to {nextScene}");
-  
     GameObject[] sceneControllers = GameObject.FindGameObjectsWithTag("SceneController");
     SceneController nextController = null;
     GameObject player = GameObject.FindGameObjectWithTag("PlayerRoot");
@@ -64,39 +62,46 @@ public class SceneController : MonoBehaviour
   /// </summary>
   private void SetCurrentSceneActive()
   {
-    //Debug.Log($"Setting {currentScene} as active");
     SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentScene));
   }
 
   /// <summary>
   /// Closes door to the previous scene
   /// </summary>
-  public void ClosePreviousScene()
+  private void ClosePreviousScene()
   {
-    //Debug.Log($"Closing scene {previousScene}");
     entranceDoor.SetActive(true);
     UnloadPreviousScene();
   }
 
+  /// <summary>
+  /// Sends message to send player over to next scene
+  /// </summary>
+  /// <param name="player">players root object</param>
+  /// <param name="controller">Other scene controller</param>
   private void SendPlayer(GameObject player, SceneController controller)
   {
-    //Debug.Log($"Sending player over to {nextScene}");
     controller.RecivePlayer(player);
   }
 
+  /// <summary>
+  /// Gets player from other scene
+  /// </summary>
+  /// <param name="player">Player</param>
   private void RecivePlayer(GameObject player)
   {
-    //Debug.Log($"Reciving player on {currentScene}");
-
     player.transform.parent = this.transform;
     player.transform.parent = null;
   }
 
+  /// <summary>
+  /// This checks if the player hits the exit hitbox
+  /// </summary>
+  /// <param name="other"></param>
   private void OnTriggerEnter(Collider other)
   {
     if (other.CompareTag("Player"))
     {
-      //Debug.Log($"{currentScene} trigger entered");
       collisionChecker.SetActive(false);
       MovePlayerOver();
     }
@@ -106,10 +111,8 @@ public class SceneController : MonoBehaviour
   /// <summary>
   /// starts to load next scene
   /// </summary>
-  public void LoadNextScene()
+  private void LoadNextScene()
   {
-    //Debug.Log($"Starting load {nextScene}");
-
     if (nextScene != string.Empty)
       StartCoroutine(LoadSceneAsync());
     else
@@ -119,9 +122,8 @@ public class SceneController : MonoBehaviour
   /// <summary>
   /// Unloads the previous scene
   /// </summary>
-  public void UnloadPreviousScene()
+  private void UnloadPreviousScene()
   {
-    //Debug.Log($"Starting unload previous scene {previousScene}");
     StartCoroutine(UnloadSceneAsync());
   }
 
@@ -139,6 +141,10 @@ public class SceneController : MonoBehaviour
     }
   }
 
+  /// <summary>
+  /// Does the async unloading
+  /// </summary>
+  /// <returns></returns>
   private IEnumerator UnloadSceneAsync()
   {
     AsyncOperation asyncUnLoad = SceneManager.UnloadSceneAsync(previousScene);
