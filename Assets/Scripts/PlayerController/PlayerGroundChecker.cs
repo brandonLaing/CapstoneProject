@@ -21,7 +21,11 @@ public class PlayerGroundChecker : MonoBehaviour
   { 
     for (int i = 0; i < groundObjects.Count; i++)
     {
-      if (!groundObjects[i].activeSelf)
+      if (groundObjects[i] == null)
+      {
+        groundObjects.Remove(groundObjects[i]);
+      }
+      else if (!groundObjects[i].activeSelf)
       {
         groundObjects.Remove(groundObjects[i]);
         return;

@@ -35,7 +35,6 @@ public class PlatformMoving : MonoBehaviour
     {
       PositionsBased();
     }
-    //TimeBased();
   }
 
   private void PositionsBased()
@@ -57,21 +56,6 @@ public class PlatformMoving : MonoBehaviour
         movingToEnd = !movingToEnd;
         swapTimer = 0;
       }
-  }
-
-  private void TimeBased()
-  {
-    currentMoveTime += Time.fixedDeltaTime;
-    if (currentMoveTime >= 5)
-    {
-      moveForward = !moveForward;
-      currentMoveTime = 0;
-    }
-
-    if (moveForward)
-      transform.position += transform.forward * (moveSpeed * Time.fixedDeltaTime);
-    else
-      transform.position -= transform.forward * (moveSpeed * Time.fixedDeltaTime);
   }
 
   private void OnCollisionEnter(Collision collision)
