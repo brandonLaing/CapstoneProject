@@ -1577,12 +1577,17 @@ PrefabInstance:
     - target: {fileID: 8916352309957860526, guid: 33436983acd2e204e91e90cef7377564,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3126445336155365995, guid: 33436983acd2e204e91e90cef7377564,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609829195290118264, guid: 33436983acd2e204e91e90cef7377564,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 3895
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33436983acd2e204e91e90cef7377564, type: 3}
@@ -2139,7 +2144,7 @@ GameObject:
   - component: {fileID: 1404218066}
   - component: {fileID: 1404218065}
   - component: {fileID: 1404218064}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
