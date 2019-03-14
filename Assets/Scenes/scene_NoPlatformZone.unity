@@ -261,11 +261,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5609829195290118264, guid: 33436983acd2e204e91e90cef7377564,
-        type: 3}
-      propertyPath: layerMask.m_Bits
-      value: 5943
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33436983acd2e204e91e90cef7377564, type: 3}
 --- !u!1 &1788775858
@@ -372,6 +367,7 @@ GameObject:
   - component: {fileID: 1793028372}
   - component: {fileID: 1793028371}
   - component: {fileID: 1793028370}
+  - component: {fileID: 1793028374}
   m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
@@ -451,6 +447,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1793028374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793028369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25149c691dd126548b0a7d8385ab3d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1909253644
 GameObject:
   m_ObjectHideFlags: 0

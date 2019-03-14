@@ -186,6 +186,9 @@ MonoBehaviour:
   minPlatformRange: 2
   maxPlatformRange: 20
   _platformRange: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 5943
   projectionType: 0
   materials:
   - {fileID: 2100000, guid: 03b1ea02b06da034e84223879310bf15, type: 2}
