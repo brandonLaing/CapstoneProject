@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToBoost: []
   speedForce: 10
-  testCubePrefab: {fileID: 8910116823812019205, guid: 4563c5418cc6afa49a67c7ecde2c4602,
+  testCubePrefab: {fileID: 1440868295425259809, guid: daae394099ff57c4c81cc8781d08267b,
     type: 3}
 --- !u!1001 &774565164004847470
 PrefabInstance:

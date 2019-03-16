@@ -18,8 +18,13 @@ public class PlayerPlatformGun : MonoBehaviour
 
   public Transform projectionLocation;
 
+  public Queue<Transform> platformQue = new Queue<Transform>();
+
   public float minPlatformRange, maxPlatformRange;
   public float _platformRange = 10;
+
+  public LayerMask layerMask;
+
   public float PlatformRange
   {
     get
@@ -121,10 +126,21 @@ public class PlayerPlatformGun : MonoBehaviour
     if (Input.GetMouseButtonDown(1))
     {
       GameObject newObject = Instantiate(platformPrefabs[(int)projectionType], projectionLocation.position, projectionLocation.rotation);
+      newObject.name += System.DateTime.Now.Second;
+
       if (projectionType == ProjectionType.MovingPlatform)
       {
+        GameObject parent = newObject;
+        Transform child = newObject.transform.GetChild(0);
+        child.parent = null;
+        Destroy(parent.gameObject);
+
         CurrentGunState = GunState.PlaceingMovingEndPoint;
-        currentMovingPlatform = newObject;
+        currentMovingPlatform = child.gameObject;
+      }
+      else
+      {
+        CheckNumberOfPlatforms(newObject.transform);
       }
     }
   }
@@ -134,7 +150,14 @@ public class PlayerPlatformGun : MonoBehaviour
     PlatformRange += (Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime) * scrollMultiplier;
 
     // set the transform of the projection
-    projectionLocation.position = cameraTransform.position + cameraTransform.forward * PlatformRange;
+    RaycastHit hit;
+    if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, PlatformRange, layerMask))
+    {
+      projectionLocation.position = hit.point;
+    }
+    else
+      projectionLocation.position = cameraTransform.position + cameraTransform.forward * PlatformRange;
+
 
     // update the rotation to the players angle
     Vector3 newRotation = transform.eulerAngles;
@@ -173,6 +196,8 @@ public class PlayerPlatformGun : MonoBehaviour
     {
       currentMovingPlatform.GetComponent<PlatformMoving>().AddEndPoint(projectionLocation.transform.position);
       CurrentGunState = GunState.Triggered;
+
+      CheckNumberOfPlatforms(currentMovingPlatform.transform);
     }
 
     if (Input.GetMouseButtonDown(0))
@@ -180,5 +205,28 @@ public class PlayerPlatformGun : MonoBehaviour
       Destroy(currentMovingPlatform);
       CurrentGunState = GunState.Standby;
     }
+  }
+
+  private void CheckNumberOfPlatforms(Transform newPlatform)
+  {
+    if (platformQue.Count >= 3)
+    {
+      //Debug.Log("Starting to remove something from the que");
+      Transform objectToDestroy = platformQue.Dequeue();
+
+      while (objectToDestroy.childCount > 0)
+        for (int i = 0; i < objectToDestroy.childCount; i++)
+        {
+          //Debug.Log("Destroying children");
+
+          objectToDestroy.GetChild(i).parent = null;
+        }
+
+      //Debug.Log("Destroying platform " + objectToDestroy.name);
+      Destroy(objectToDestroy.gameObject);
+    }
+
+    //Debug.Log($"Adding {newPlatform.name} to the que");
+    platformQue.Enqueue(newPlatform);
   }
 }
