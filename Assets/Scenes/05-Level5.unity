@@ -41431,17 +41431,17 @@ PrefabInstance:
     - target: {fileID: 1379134466853669523, guid: 5faf215fab364cc4ab56859faf2ebad2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7441349
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1379134466853669523, guid: 5faf215fab364cc4ab56859faf2ebad2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.835302
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1379134466853669523, guid: 5faf215fab364cc4ab56859faf2ebad2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.534975
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1379134466853669523, guid: 5faf215fab364cc4ab56859faf2ebad2,
         type: 3}
@@ -41493,6 +41493,11 @@ PrefabInstance:
       propertyPath: currentScene
       value: 05-Level5
       objectReference: {fileID: 0}
+    - target: {fileID: 1379134466853669522, guid: 5faf215fab364cc4ab56859faf2ebad2,
+        type: 3}
+      propertyPath: entranceDoor
+      value: 
+      objectReference: {fileID: 1548067147}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5faf215fab364cc4ab56859faf2ebad2, type: 3}
 --- !u!114 &1048244401 stripped
@@ -46971,6 +46976,12 @@ PrefabInstance:
       objectReference: {fileID: 231114755}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11eaf294d1bc9aa419fad4c2f65be362, type: 3}
+--- !u!1 &1548067147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1650102652811378660, guid: 11eaf294d1bc9aa419fad4c2f65be362,
+    type: 3}
+  m_PrefabInstance: {fileID: 1548067146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1589817518
 PrefabInstance:
   m_ObjectHideFlags: 0
