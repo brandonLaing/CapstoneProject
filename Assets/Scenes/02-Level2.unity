@@ -926,6 +926,7 @@ GameObject:
   - component: {fileID: 284714588}
   - component: {fileID: 284714587}
   - component: {fileID: 284714586}
+  - component: {fileID: 284714590}
   m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
@@ -25628,6 +25629,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &284714590
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284714584}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 865091033}
 --- !u!1001 &303568680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25738,7 +25753,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15058
+  m_Name: pb_Mesh40060
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -26707,7 +26722,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14904
+  m_Name: pb_Mesh39868
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -27390,7 +27405,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19096
+  m_Name: pb_Mesh39966
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -31029,7 +31044,7 @@ PrefabInstance:
     - target: {fileID: 1650102652811378660, guid: 11eaf294d1bc9aa419fad4c2f65be362,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1795601695191615440, guid: 11eaf294d1bc9aa419fad4c2f65be362,
         type: 3}

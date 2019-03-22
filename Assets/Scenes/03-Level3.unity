@@ -1073,8 +1073,9 @@ GameObject:
   - component: {fileID: 313643831}
   - component: {fileID: 313643830}
   - component: {fileID: 313643829}
+  - component: {fileID: 313643832}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Upgrade Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1152,6 +1153,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313643827}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &313643832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313643827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ea375162ab6154da2c26df82c4601b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPlayer: {fileID: 8050600581818363447, guid: 2b3bd84f4a5b0594f8f8fe4242f6eff8,
+    type: 3}
 --- !u!43 &320519638
 Mesh:
   m_ObjectHideFlags: 0
@@ -20904,7 +20919,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1010796731
 PrefabInstance:
@@ -21484,7 +21499,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28888
+  m_Name: pb_Mesh44752
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -22225,7 +22240,7 @@ PrefabInstance:
     - target: {fileID: 1379134466853669523, guid: 5faf215fab364cc4ab56859faf2ebad2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1379134466853669523, guid: 5faf215fab364cc4ab56859faf2ebad2,
         type: 3}
@@ -23061,7 +23076,7 @@ PrefabInstance:
     - target: {fileID: 3314113465253617331, guid: 92cc0b61d2d78024e8720cca695ac52d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -201.7
+      value: -209.7
       objectReference: {fileID: 0}
     - target: {fileID: 3314113465253617331, guid: 92cc0b61d2d78024e8720cca695ac52d,
         type: 3}
@@ -23121,12 +23136,12 @@ PrefabInstance:
     - target: {fileID: 3314113466020065028, guid: 92cc0b61d2d78024e8720cca695ac52d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.57
+      value: 8.07
       objectReference: {fileID: 0}
     - target: {fileID: 3314113466020065028, guid: 92cc0b61d2d78024e8720cca695ac52d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.3788
+      value: 0.4212
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92cc0b61d2d78024e8720cca695ac52d, type: 3}
