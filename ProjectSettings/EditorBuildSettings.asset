@@ -20,6 +20,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/05-Level5.unity
     guid: 963dd4255d16e1140bc21abc7b8cc7fd
+  - enabled: 1
+    path: Assets/Scenes/06-Level6.unity
+    guid: a722f2a740795794caffe77b11e5c41f
+  - enabled: 1
+    path: Assets/Scenes/07-Level7.unity
+    guid: 517d6eae026414049a19c048a503d6cd
+  - enabled: 1
+    path: Assets/Scenes/08-Level8.unity
+    guid: 381dc3890db2fbc47a2167b70206ab5a
+  - enabled: 1
+    path: Assets/Scenes/09-Level9.unity
+    guid: 4f865f221c8a5014c84fb905f64a7d13
+  - enabled: 1
+    path: Assets/Scenes/10-Level10.unity
+    guid: 41383ca52934dbe4f808b16914c1ad21
   - enabled: 0
     path: Assets/Scenes/SceneTransitionTesting/scene_TransitionTest0.unity
     guid: 1587e0bfe5f0bb744815ee7c1b615142
