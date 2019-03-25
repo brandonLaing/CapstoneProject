@@ -8,7 +8,7 @@ public enum GunState
 }
 public enum ProjectionType
 {
-  StaticPlatform, SpeedPlatform, JumpPlatform, MovingPlatform, Length
+  StaticPlatform, MovingPlatform, SpeedPlatform, JumpPlatform, Length
 }
 
 public class PlayerPlatformGun : MonoBehaviour
@@ -111,11 +111,11 @@ public class PlayerPlatformGun : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.Alpha1))
       projectionType = ProjectionType.StaticPlatform;
     if (Input.GetKeyDown(KeyCode.Alpha2))
-      projectionType = ProjectionType.SpeedPlatform;
-    if (Input.GetKeyDown(KeyCode.Alpha3))
-      projectionType = ProjectionType.JumpPlatform;
-    if (Input.GetKeyDown(KeyCode.Alpha4))
       projectionType = ProjectionType.MovingPlatform;
+    if (Input.GetKeyDown(KeyCode.Alpha3))
+      projectionType = ProjectionType.SpeedPlatform;
+    if (Input.GetKeyDown(KeyCode.Alpha4))
+      projectionType = ProjectionType.JumpPlatform;
 
     // update the material of the platform
     projectionLocation.GetComponent<MeshRenderer>().material = materials[(int)projectionType];
