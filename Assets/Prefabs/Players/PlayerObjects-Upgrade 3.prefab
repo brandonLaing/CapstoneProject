@@ -344,7 +344,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f8bce62ac332e9647afaaf5be11568d4, type: 2}
   platformPrefabs:
   - {fileID: 1407063438944597548, guid: b976e3185f408514dbefac187d1b401f, type: 3}
-  - {fileID: 3202418698154251690, guid: 533f8c459e8b7b94398ff9194a755254, type: 3}
+  - {fileID: 9104212703564646946, guid: d63c84163d5a13746866120d511b435c, type: 3}
   - {fileID: 739408718564184280, guid: 353f812ea0a4b614f9b0d4b5143a1d25, type: 3}
   scrollMultiplier: 100
   currentMovingPlatform: {fileID: 0}
