@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+
 public class SceneTransitioner : MonoBehaviour
 {
   public static SceneTransitioner main;
 
-  public string[] scenes;
+  public string[] scenes = { "01-Level1", "scene_MiniBlocks", "scene_NoPlatformZone", "scene_TransitionTest" };
 
   private void Start()
   {
+    DontDestroyOnLoad(this.gameObject);
+
     if (main != null)
     {
       Destroy(this.gameObject);

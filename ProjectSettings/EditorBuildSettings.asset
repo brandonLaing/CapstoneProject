@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/03-Level3.unity
     guid: 250d5c8ee68bc644d99d50b2c7600461
   - enabled: 1
-    path: Assets/Scenes/04-Level4.unity
+    path: Assets/Scenes/05-Level5.unity
     guid: 156c7ccf35c31c84089e79e8c8493006
   - enabled: 1
-    path: Assets/Scenes/05-Level5.unity
+    path: Assets/Scenes/04-Level4.unity
     guid: 963dd4255d16e1140bc21abc7b8cc7fd
   - enabled: 1
     path: Assets/Scenes/06-Level6.unity
@@ -35,22 +35,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/10-Level10.unity
     guid: 41383ca52934dbe4f808b16914c1ad21
-  - enabled: 0
-    path: Assets/Scenes/SceneTransitionTesting/scene_TransitionTest0.unity
-    guid: 1587e0bfe5f0bb744815ee7c1b615142
-  - enabled: 0
-    path: Assets/Scenes/SceneTransitionTesting/scene_TransitionTest1.unity
-    guid: 30729819a5ec8bc42a484b29d46ed277
-  - enabled: 0
-    path: Assets/Scenes/SceneTransitionTesting/scene_TransitionTest2.unity
-    guid: 193ee1902fe6c1f46825275ee4b36728
-  - enabled: 0
-    path: Assets/Scenes/SceneTransitionTesting/scene_TransitionTest3.unity
-    guid: f2d9c8fd02aac9f4c8b837209f2d0cca
-  - enabled: 0
-    path: Assets/Scenes/SceneTransitionTesting/scene_TransitionTest4.unity
-    guid: 6e11fd11e7f789b4db9038cbd2beabc0
-  - enabled: 0
-    path: Assets/Scenes/SceneTransitionTesting/scene_TransitionTest5.unity
-    guid: 3309afcb82c0238469d5d74261ab95bb
+  - enabled: 1
+    path: Assets/Scenes/scene_MiniBlocks.unity
+    guid: bb77f4410d0ce584e8ef0b31e3d18545
+  - enabled: 1
+    path: Assets/Scenes/scene_NoPlatformZone.unity
+    guid: 17e1777ac82f76540b3f06797fd9198e
+  - enabled: 1
+    path: Assets/Scenes/scene_SceneTransitionTest.unity
+    guid: 6ee2b5ac63723ea4e81b76fb123d1191
   m_configObjects: {}
