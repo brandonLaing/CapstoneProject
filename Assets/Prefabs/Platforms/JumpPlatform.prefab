@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToToss: []
-  bounceForce: 50
+  bounceForce: 15
   testCubePrefab: {fileID: 1440868295425259809, guid: daae394099ff57c4c81cc8781d08267b,
     type: 3}
 --- !u!1001 &371809280379456084
