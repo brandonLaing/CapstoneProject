@@ -8,21 +8,34 @@ public class WallTileColorChanger : MonoBehaviour
   /// Pointers on the wall tile
   /// </summary>
   [Tooltip("Pointers on the wall tile mesh renderer")]
-  public MeshRenderer[] pointersRenderer;
+  public MeshRenderer[] pointersRenderer, flowRenderer;
 
   public Material successMat, failMat;
 
+  public Material flowOff, flowOn;
+
   public void CheckPassed(bool passed)
   {
-    Material applyingMat;
+    Material applyingWheelMat;
+    Material applyingFlowMat;
+
     if (passed)
-      applyingMat = successMat;
+    {
+      applyingWheelMat = successMat;
+      applyingFlowMat = flowOn;
+    }
     else
-      applyingMat = failMat;
+    {
+      applyingWheelMat = failMat;
+      applyingFlowMat = flowOff;
+    }
 
     for (int i = 0; i < pointersRenderer.Length; i++)
     {
-      pointersRenderer[i].material = applyingMat;
+      pointersRenderer[i].material = applyingWheelMat;
     }
+
+    for (int i = 0; i < flowRenderer.Length; i++)
+      flowRenderer[i].material = applyingFlowMat;
   }
 }
