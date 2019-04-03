@@ -2,15 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GunState
-{
-  Standby, Triggered, PlaceingMovingEndPoint
-}
-public enum ProjectionType
-{
-  StaticPlatform, SpeedPlatform, JumpPlatform, MovingPlatform, Length
-}
-
 public class PlayerPlatformGun : MonoBehaviour
 {
   #region Variables

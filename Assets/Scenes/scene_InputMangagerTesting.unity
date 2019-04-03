@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 269464206}
   - component: {fileID: 269464205}
   - component: {fileID: 269464204}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,6 +470,7 @@ MonoBehaviour:
     secondPlatform: 50
     thirdPlatform: 51
     fourthPlatform: 52
+    interact: 102
 --- !u!4 &1359306508
 Transform:
   m_ObjectHideFlags: 0
@@ -577,11 +578,16 @@ GameObject:
   - component: {fileID: 1992011976}
   - component: {fileID: 1992011986}
   - component: {fileID: 1992011985}
+  - component: {fileID: 1992011981}
+  - component: {fileID: 1992011983}
+  - component: {fileID: 1992011984}
+  - component: {fileID: 1992011987}
+  - component: {fileID: 1992011988}
   - component: {fileID: 1992011979}
   - component: {fileID: 1992011977}
+  - component: {fileID: 1992011982}
   - component: {fileID: 1992011978}
   - component: {fileID: 1992011980}
-  - component: {fileID: 1992011981}
   m_Layer: 0
   m_Name: PlayerBody
   m_TagString: Untagged
@@ -598,7 +604,7 @@ Transform:
   m_GameObject: {fileID: 1992011975}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1.2, y: 1, z: 1.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 548468070}
   m_Father: {fileID: 2002153517}
@@ -691,6 +697,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc22a06f6d78fe498b072310a65a8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallMultiplier: 2.5
+  isPlayer: 1
+  lowJumpMultiplier: 2
+--- !u!65 &1992011982
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992011975}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.2, z: 0.4}
+  m_Center: {x: 0, y: -0.95, z: 0}
+--- !u!114 &1992011983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992011975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205935f071cb4184fa1e19176f4a3ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundObjects: []
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  _isTouchingGround: 0
+--- !u!114 &1992011984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992011975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8600e165fdad542a6716b0d1ed4af7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpVelocity: 6.25
 --- !u!114 &1992011985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,6 +780,39 @@ MonoBehaviour:
     secondPlatform: 50
     thirdPlatform: 51
     fourthPlatform: 52
+    interact: 102
+--- !u!114 &1992011987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992011975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5751ac615bb7c94ba0e278a57f02938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraXSpeed: 150
+  cameraYSpeed: 150
+  invertX: 0
+  invertY: 1
+--- !u!114 &1992011988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992011975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec373dfb337e2d4f8c00cb9f340af39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 3
+  targetlayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &2002153516
 GameObject:
   m_ObjectHideFlags: 0

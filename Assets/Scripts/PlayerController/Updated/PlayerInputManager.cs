@@ -24,37 +24,19 @@ public class PlayerInputManager : MonoBehaviour
   public event Action OnPlatformThreeSelected = delegate { };
   public event Action OnPlatformFourSelected = delegate { };
 
+  public event Action OnInteract = delegate { };
+
   [SerializeField]
   private KeyHolder keys = new KeyHolder();
 
   private void Update()
   {
-    GetMovement();
     GetGunActions();
+    GetMovement();
+    GetCameraDirection();
     CyclePlatforms();
     SelectPlatform();
-  }
-
-  private void GetMovement()
-  {
-    Vector3 moveDirection = Vector3.zero;
-
-    if (Input.GetKey(keys.forwardMovement))
-      moveDirection += Vector3.forward;
-    if (Input.GetKey(keys.backMovement))
-      moveDirection += Vector3.back;
-    if (Input.GetKey(keys.leftMovement))
-      moveDirection += Vector3.left;
-    if (Input.GetKey(keys.rightMovement))
-      moveDirection += Vector3.right;
-
-    if (moveDirection != Vector3.zero)
-      OnMove(moveDirection);
-
-    if (Input.GetKeyDown(keys.jumpKey))
-      OnJumpPressed();
-    if (Input.GetKey(keys.jumpKey))
-      OnJumpHeld();
+    InteractionCheck();
   }
 
   private void GetGunActions()
@@ -65,6 +47,38 @@ public class PlayerInputManager : MonoBehaviour
       OnGunShot();
 
     OnGunRangeChanged(Input.GetAxis("Mouse ScrollWheel"));
+  }
+
+  private void GetMovement()
+  {
+    Vector3 moveDirection = new Vector3();
+
+    if (Input.GetKey(keys.forwardMovement))
+      moveDirection += Vector3.forward;
+    if (Input.GetKey(keys.backMovement))
+      moveDirection += Vector3.back;
+    if (Input.GetKey(keys.leftMovement))
+      moveDirection += Vector3.left;
+    if (Input.GetKey(keys.rightMovement))
+      moveDirection += Vector3.right;
+
+    OnMove(moveDirection);
+
+    if (Input.GetKeyDown(keys.jumpKey))
+      OnJumpPressed();
+    if (Input.GetKey(keys.jumpKey))
+      OnJumpHeld();
+  }
+
+  private void GetCameraDirection()
+  {
+    Vector2 cameraDirection = new Vector2
+    {
+      x = Input.GetAxis("Mouse X"),
+      y = Input.GetAxis("Mouse Y")
+    };
+
+    OnLook(cameraDirection);
   }
 
   private void CyclePlatforms()
@@ -86,6 +100,12 @@ public class PlayerInputManager : MonoBehaviour
     if (Input.GetKeyDown(keys.fourthPlatform))
       OnPlatformFourSelected();
   }
+
+  private void InteractionCheck()
+  {
+    if (Input.GetKeyDown(keys.interact))
+      OnInteract();
+  }
 }
 
 [Serializable]
@@ -105,4 +125,6 @@ public class KeyHolder
   public KeyCode secondPlatform = KeyCode.Alpha2;
   public KeyCode thirdPlatform = KeyCode.Alpha3;
   public KeyCode fourthPlatform = KeyCode.Alpha4;
+
+  public KeyCode interact = KeyCode.F;
 }
