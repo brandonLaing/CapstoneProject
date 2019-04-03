@@ -130,13 +130,8 @@ public class PlayerPlatformGun : MonoBehaviour
 
       if (projectionType == ProjectionType.MovingPlatform)
       {
-        GameObject parent = newObject;
-        Transform child = newObject.transform.GetChild(0);
-        child.parent = null;
-        Destroy(parent.gameObject);
-
         CurrentGunState = GunState.PlaceingMovingEndPoint;
-        currentMovingPlatform = child.gameObject;
+        currentMovingPlatform = newObject;
       }
       else
       {
@@ -214,16 +209,16 @@ public class PlayerPlatformGun : MonoBehaviour
       //Debug.Log("Starting to remove something from the que");
       Transform objectToDestroy = platformQue.Dequeue();
 
-      while (objectToDestroy.childCount > 0)
-        for (int i = 0; i < objectToDestroy.childCount; i++)
+      Debug.Log(objectToDestroy.name);
+
+      for (Transform tf = objectToDestroy; tf != null; tf = tf.parent)
+      {
+        if (tf.parent == null)
         {
-          //Debug.Log("Destroying children");
-
-          objectToDestroy.GetChild(i).parent = null;
+          Destroy(tf.gameObject);
+          break;
         }
-
-      //Debug.Log("Destroying platform " + objectToDestroy.name);
-      Destroy(objectToDestroy.gameObject);
+      }
     }
 
     //Debug.Log($"Adding {newPlatform.name} to the que");
