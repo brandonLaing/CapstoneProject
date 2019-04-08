@@ -8,9 +8,9 @@ public class PlayerGunShooter : MonoBehaviour
   public event System.Action OnGunTriggered = delegate { };
   public event System.Action OnGunStandby = delegate { };
 
-  private GunState gunState;
+  private GunState gunState = GunState.Standby;
   private GameObject platformPrefab;
-  private ProjectionType projectionType;
+  private ProjectionType projectionType = ProjectionType.Length;
 
   private void Awake()
   {
@@ -24,6 +24,9 @@ public class PlayerGunShooter : MonoBehaviour
     GetComponent<PlayerInputManager>().OnGunShot -= ShootGun;
   }
 
+  /// <summary>
+  /// Contains logic on 
+  /// </summary>
   private void ShootGun()
   {
     if (gunState == GunState.Standby)
@@ -44,6 +47,9 @@ public class PlayerGunShooter : MonoBehaviour
     }
   }
 
+  /// <summary>
+  /// Sets gunstate when gun trigger is called
+  /// </summary>
   private void ToggleGunTrigger()
   {
     switch (gunState)

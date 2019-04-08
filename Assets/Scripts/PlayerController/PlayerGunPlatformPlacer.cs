@@ -16,13 +16,15 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
   #region Start/End Functions
   private void Awake()
   {
-    // OnGunFired
-    // OnGunStandby
+    GetComponent<PlayerGunShooter>().OnGunFired += ShootGun;
+    GetComponent<PlayerGunShooter>().OnGunStandby += DestroyMovingPlatform;
     GetComponent<PlayerGunLocationSetter>().OnPlatformLocationChanged += SetLocation;
   }
 
   private void OnDestroy()
   {
+    GetComponent<PlayerGunShooter>().OnGunFired -= ShootGun;
+    GetComponent<PlayerGunShooter>().OnGunStandby -= DestroyMovingPlatform;
     GetComponent<PlayerGunLocationSetter>().OnPlatformLocationChanged -= SetLocation;
   }
   #endregion
@@ -71,8 +73,11 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
   /// </summary>
   private void DestroyMovingPlatform()
   {
-    OnEndPointSet -= movingPlatform.GetComponent<PlatformMoving>().AddEndPoint;
-    Destroy(movingPlatform);
+    if (movingPlatform != null)
+    {
+      OnEndPointSet -= movingPlatform.GetComponent<PlatformMoving>().AddEndPoint;
+      Destroy(movingPlatform);
+    }
   }
 
   /// <summary>

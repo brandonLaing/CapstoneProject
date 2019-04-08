@@ -43,10 +43,11 @@ public class PlayerGunLocationSetter : MonoBehaviour
     Vector3 position = Vector3.zero, rotation = Vector3.zero;
     RaycastHit hit;
     Transform cameraTransform = Camera.main.transform;
+
     if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, PlatformRange, layerMask))
       position = hit.point;
     else
-      rotation = cameraTransform.position + cameraTransform.forward * PlatformRange;
+      position = cameraTransform.position + (cameraTransform.forward * PlatformRange);
 
     rotation = transform.eulerAngles;
 

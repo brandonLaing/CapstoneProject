@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerGunPlatformSelector : MonoBehaviour
 {
-  public bool staticAvailable, movingAvailable, speedAvailable, bounceAvailable ;
+  public bool staticAvailable, movingAvailable, speedAvailable, bounceAvailable;
   public GameObject staticPrefab, movingPrefab, speedPrefab, bouncePrefab;
 
+  private bool ableToChoose = false;
+  [SerializeField]
   private ProjectionType _projectionType = ProjectionType.Length;
 
   public event System.Action<GameObject, ProjectionType> OnPlatformSelected = delegate { };
@@ -19,6 +21,8 @@ public class PlayerGunPlatformSelector : MonoBehaviour
     _playerInputManager.OnPlatformTwoSelected += SelectSecondPlatform;
     _playerInputManager.OnPlatformThreeSelected += SelectThirdPlatform;
     _playerInputManager.OnPlatformFourSelected +=SelectFourthPlatform;
+    GetComponent<PlayerGunShooter>().OnGunTriggered += AcceptChoosing;
+    GetComponent<PlayerGunShooter>().OnGunStandby += DenyChoosing;
   }
 
   private void OnDestroy()
@@ -30,13 +34,21 @@ public class PlayerGunPlatformSelector : MonoBehaviour
     _playerInputManager.OnPlatformTwoSelected -= SelectSecondPlatform;
     _playerInputManager.OnPlatformThreeSelected -= SelectThirdPlatform;
     _playerInputManager.OnPlatformFourSelected -= SelectFourthPlatform;
+    GetComponent<PlayerGunShooter>().OnGunTriggered -= AcceptChoosing;
+    GetComponent<PlayerGunShooter>().OnGunStandby -= DenyChoosing;
   }
+
+  private void AcceptChoosing() => ableToChoose = true;
+  private void DenyChoosing() => ableToChoose = false;
 
   /// <summary>
   /// Selects the next platform
   /// </summary>
   public void SelectNextPlatform()
   {
+    if (!ableToChoose)
+      return;
+
     switch(_projectionType)
     {
       case ProjectionType.StaticPlatform:
@@ -62,6 +74,9 @@ public class PlayerGunPlatformSelector : MonoBehaviour
   /// </summary>
   public void SelectPreviousPlatform()
   {
+    if (!ableToChoose)
+      return;
+
     switch (_projectionType)
     {
       case ProjectionType.StaticPlatform:
@@ -87,7 +102,7 @@ public class PlayerGunPlatformSelector : MonoBehaviour
   /// </summary>
   public void SelectFirstPlatform()
   {
-    if (staticAvailable)
+    if (staticAvailable && ableToChoose)
     {
       OnPlatformSelected(staticPrefab, ProjectionType.StaticPlatform);
       _projectionType = ProjectionType.StaticPlatform;
@@ -99,7 +114,7 @@ public class PlayerGunPlatformSelector : MonoBehaviour
   /// </summary>
   public void SelectSecondPlatform()
   {
-    if (movingAvailable)
+    if (movingAvailable && ableToChoose)
     {
       OnPlatformSelected(movingPrefab, ProjectionType.MovingPlatform);
       _projectionType = ProjectionType.MovingPlatform;
@@ -111,7 +126,7 @@ public class PlayerGunPlatformSelector : MonoBehaviour
   /// </summary>
   public void SelectThirdPlatform()
   {
-    if (speedAvailable)
+    if (speedAvailable && ableToChoose)
     {
       OnPlatformSelected(speedPrefab, ProjectionType.SpeedPlatform);
       _projectionType = ProjectionType.SpeedPlatform;
@@ -123,7 +138,7 @@ public class PlayerGunPlatformSelector : MonoBehaviour
   /// </summary>
   public void SelectFourthPlatform()
   {
-    if (bounceAvailable)
+    if (bounceAvailable && ableToChoose)
     {
       OnPlatformSelected(bouncePrefab, ProjectionType.BouncePlatform);
       _projectionType = ProjectionType.BouncePlatform;
