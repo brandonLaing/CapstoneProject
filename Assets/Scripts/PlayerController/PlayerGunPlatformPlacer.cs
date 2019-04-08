@@ -6,30 +6,40 @@ using UnityEngine;
 public class PlayerGunPlatformPlacer : MonoBehaviour
 {
   #region Variables
-  public GunState gunState = GunState.Standby;
-  public GameObject currentMovingPlatform;
   public event Action<GameObject> OnNewPlatformCreated = delegate { };
   public event Action<Vector3> OnEndPointSet = delegate { };
+  public GameObject movingPlatform;
 
   public Transform platformLocation;
-  public GameObject platformPrefab;
-  public ProjectionType currentPlatformType;
   #endregion
 
   #region Start/End Functions
+  private void Awake()
+  {
+    // OnGunFired
+    // OnGunStandby
+    GetComponent<PlayerGunLocationSetter>().OnPlatformLocationChanged += SetLocation;
+  }
 
+  private void OnDestroy()
+  {
+    GetComponent<PlayerGunLocationSetter>().OnPlatformLocationChanged -= SetLocation;
+  }
   #endregion
 
   #region Functions
   /// <summary>
-  /// Do logic on what to shoot
+  /// Executes logic on when to fire the gun
   /// </summary>
-  public void ShootGun()
+  /// <param name="platformPrefab">Prefab that will be created</param>
+  /// <param name="currentState">State of the gun</param>
+  /// <param name="platformType">Type of platform that is going to be spawned</param>
+  private void ShootGun(GameObject platformPrefab, GunState currentState, ProjectionType platformType)
   {
-    switch (gunState)
+    switch (currentState)
     {
       case GunState.Triggered:
-        PlacePlatform();
+        PlaceNewPlatform(platformPrefab, platformType);
         break;
       case GunState.PlaceingMovingEndPoint:
         PlaceMovingEndPoint();
@@ -38,21 +48,31 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
   }
 
   /// <summary>
-  /// Places down platforms into the world
+  /// Placed down a new platform
   /// </summary>
-  private void PlacePlatform()
+  /// <param name="platformPrefab">Prefab to be spawned in</param>
+  /// <param name="platformType">Type of platform being spawned</param>
+  private void PlaceNewPlatform(GameObject platformPrefab, ProjectionType platformType)
   {
     GameObject newPlatform = Instantiate(platformPrefab, platformLocation);
-    newPlatform.name = platformPrefab.name + " (Clone)";
+    newPlatform.name += ("(Clone)");
 
-
-    if (currentPlatformType == ProjectionType.MovingPlatform)
+    if (platformType == ProjectionType.MovingPlatform)
     {
-      gunState = GunState.PlaceingMovingEndPoint;
-      OnEndPointSet += newPlatform.GetComponent<PlatformMoving>().AddEndPoint;
+      movingPlatform = newPlatform;
+      OnEndPointSet += movingPlatform.GetComponent<PlatformMoving>().AddEndPoint;
     }
     else
       OnNewPlatformCreated(newPlatform);
+  }
+
+  /// <summary>
+  /// If gun is put back into standby mode the moving platform currently being placed will be removed
+  /// </summary>
+  private void DestroyMovingPlatform()
+  {
+    OnEndPointSet -= movingPlatform.GetComponent<PlatformMoving>().AddEndPoint;
+    Destroy(movingPlatform);
   }
 
   /// <summary>
@@ -60,16 +80,15 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
   /// </summary>
   private void PlaceMovingEndPoint()
   {
+    OnNewPlatformCreated(movingPlatform);
     OnEndPointSet(platformLocation.transform.position);
-    OnEndPointSet = null;
+    OnEndPointSet -= movingPlatform.GetComponent<PlatformMoving>().AddEndPoint;
   }
 
-  public void SetGunToStandby()
+  public void SetLocation(Vector3 position, Vector3 rotationEuler)
   {
-    if (gunState == GunState.PlaceingMovingEndPoint)
-    {
-      Destroy(currentMovingPlatform);
-    }
+    platformLocation.position = position;
+    platformLocation.rotation = Quaternion.Euler(rotationEuler);
   }
   #endregion
 }

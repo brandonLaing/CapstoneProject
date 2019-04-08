@@ -104,7 +104,7 @@ public class PlayerPlatformGun : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.Alpha2))
       projectionType = ProjectionType.SpeedPlatform;
     if (Input.GetKeyDown(KeyCode.Alpha3))
-      projectionType = ProjectionType.JumpPlatform;
+      projectionType = ProjectionType.BouncePlatform;
     if (Input.GetKeyDown(KeyCode.Alpha4))
       projectionType = ProjectionType.MovingPlatform;
 

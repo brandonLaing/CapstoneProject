@@ -10,14 +10,14 @@ public class PlayerGunPlatformCountManager : MonoBehaviour
   #endregion
 
   #region Start/End Functions
-  private void Start()
+  private void Awake()
   {
-
+    GetComponent<PlayerGunPlatformPlacer>().OnNewPlatformCreated += NewPlatformCreated;
   }
 
   private void OnDestroy()
   {
-    
+    GetComponent<PlayerGunPlatformPlacer>().OnNewPlatformCreated -= NewPlatformCreated;
   }
   #endregion
 

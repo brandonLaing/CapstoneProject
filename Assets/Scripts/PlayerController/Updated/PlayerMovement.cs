@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
   private void FixedUpdate()
   {
-    transform.position += (rawMoveDirection.normalized * moveSpeed) * Time.fixedDeltaTime;
+    transform.position = (rawMoveDirection.normalized * moveSpeed) * Time.fixedDeltaTime;
     rawMoveDirection = Vector3.zero;
   }
 }

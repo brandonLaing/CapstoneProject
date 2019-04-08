@@ -1,4 +1,4 @@
 ﻿public enum ProjectionType
 {
-  StaticPlatform, SpeedPlatform, JumpPlatform, MovingPlatform, Length
+  StaticPlatform, MovingPlatform, SpeedPlatform, BouncePlatform, Length
 }
