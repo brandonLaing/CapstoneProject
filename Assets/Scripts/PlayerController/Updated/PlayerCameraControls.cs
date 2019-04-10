@@ -4,39 +4,40 @@ using UnityEngine;
 
 public class PlayerCameraControls : MonoBehaviour
 {
-  /// <summary>
-  /// Rotation speed of the mouse look
-  /// </summary>
   [Tooltip("Rotations speeds of the mouse look")]
   [Range(50, 200)]
-  public float cameraXSpeed, cameraYSpeed;
+  public float cameraXSpeed = 150, cameraYSpeed = 150;
+
+  [Tooltip("If the mouse should invert its look")]
+  public bool invertX, invertY = true;
 
   /// <summary>
-  /// Lower and upper bound on the angle at which the player can look
+  /// Min and max view the camera can go in
   /// </summary>
   private readonly float minView = -90F, maxView = 90F;
-
-  /// <summary>
-  /// If the mouse should invert its look
-  /// </summary>
-  [Tooltip("If the mouse should invert its look")]
-  public bool invertX, invertY;
 
   /// <summary>
   /// Reference to the players childed camera
   /// </summary>
   private Transform playerCamera;
 
+  /// <summary>
+  /// Direction from the input manager to look at
+  /// </summary>
+  private Vector2 lookDirection;
+
+
   private void Awake()
   {
     playerCamera = GetComponentInChildren<Camera>().transform;
+    GetComponent<PlayerInputManager>().OnLook += UpdateLook;
     Cursor.lockState = CursorLockMode.Locked;
   }
 
-  private void Update()
+  public void UpdateLook(Vector2 lookDir)
   {
     #region X
-    var currentX = Input.GetAxis("Mouse X");
+    var currentX = lookDir.x;
 
     if (invertX)
       currentX *= -1;
@@ -45,7 +46,7 @@ public class PlayerCameraControls : MonoBehaviour
     #endregion
 
     #region Y
-    var mouseY = Input.GetAxis("Mouse Y");
+    var mouseY = lookDir.y;
 
     var angleEulerLimit = playerCamera.transform.eulerAngles.x;
 
@@ -63,5 +64,10 @@ public class PlayerCameraControls : MonoBehaviour
     if (targetYRotation < maxView && targetYRotation > minView)
       playerCamera.transform.eulerAngles += new Vector3(mouseY * cameraYSpeed * invertYInt * Time.deltaTime, 0, 0);
     #endregion
+  }
+
+  private void OnDestroy()
+  {
+    GetComponent<PlayerInputManager>().OnLook -= UpdateLook;
   }
 }
