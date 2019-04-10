@@ -12,6 +12,7 @@ public class PlayerGunPlatformSelector : MonoBehaviour
   private ProjectionType _projectionType = ProjectionType.Length;
 
   public event System.Action<GameObject, ProjectionType> OnPlatformSelected = delegate { };
+
   private void Start()
   {
     PlayerInputManager _playerInputManager = GetComponent<PlayerInputManager>();

@@ -19,6 +19,7 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
     GetComponent<PlayerGunShooter>().OnGunFired += ShootGun;
     GetComponent<PlayerGunShooter>().OnGunStandby += DestroyMovingPlatform;
     GetComponent<PlayerGunLocationSetter>().OnPlatformLocationChanged += SetLocation;
+    GetComponent<PlayerGunShooter>().OnMovingInterupted += DestroyMovingPlatform;
   }
 
   private void OnDestroy()
@@ -26,6 +27,7 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
     GetComponent<PlayerGunShooter>().OnGunFired -= ShootGun;
     GetComponent<PlayerGunShooter>().OnGunStandby -= DestroyMovingPlatform;
     GetComponent<PlayerGunLocationSetter>().OnPlatformLocationChanged -= SetLocation;
+    GetComponent<PlayerGunShooter>().OnMovingInterupted -= DestroyMovingPlatform;
   }
   #endregion
 
@@ -56,6 +58,9 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
   /// <param name="platformType">Type of platform being spawned</param>
   private void PlaceNewPlatform(GameObject platformPrefab, ProjectionType platformType)
   {
+    if (platformPrefab == null)
+      return;
+
     GameObject newPlatform = Instantiate(platformPrefab, platformLocation.position, platformLocation.rotation);
     newPlatform.name += ("(Clone)");
 
