@@ -38076,7 +38076,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13712
+  m_Name: pb_Mesh20092
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -42382,7 +42382,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13516
+  m_Name: pb_Mesh19888
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -45524,6 +45524,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTileManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 65126227}
     - target: {fileID: 5341950617061942729, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: doorsToEffect.Array.data[0]
@@ -45679,11 +45684,6 @@ PrefabInstance:
       propertyPath: puzzleTiles.Array.data[16]
       value: 
       objectReference: {fileID: 35615694}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: nextTile
-      value: 
-      objectReference: {fileID: 65126227}
     - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -47195,7 +47195,7 @@ PrefabInstance:
     - target: {fileID: 1650102652811378660, guid: 11eaf294d1bc9aa419fad4c2f65be362,
         type: 3}
       propertyPath: m_Name
-      value: Door
+      value: Entrance Door
       objectReference: {fileID: 0}
     - target: {fileID: 1650102652811378660, guid: 11eaf294d1bc9aa419fad4c2f65be362,
         type: 3}
