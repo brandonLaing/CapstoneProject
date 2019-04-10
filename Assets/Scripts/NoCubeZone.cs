@@ -11,14 +11,10 @@ public class NoCubeZone : MonoBehaviour
     {
       Debug.Log("Hit Player");
 
-      other.GetComponent<PlayerPlatformGun>().enabled = false;
-      other.GetComponent<PlayerPlatformGun>().CurrentGunState = GunState.Standby;
     }
   }
 
   private void OnTriggerExit(Collider other)
   {
-    if (other.CompareTag("Player"))
-      other.GetComponent<PlayerPlatformGun>().enabled = true;
   }
 }
