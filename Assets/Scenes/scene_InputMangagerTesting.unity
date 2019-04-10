@@ -644,8 +644,9 @@ GameObject:
   - component: {fileID: 1828202559}
   - component: {fileID: 1828202560}
   - component: {fileID: 1828202561}
-  - component: {fileID: 1828202562}
   - component: {fileID: 1828202563}
+  - component: {fileID: 1828202562}
+  - component: {fileID: 1828202564}
   m_Layer: 0
   m_Name: GunTester
   m_TagString: MainCamera
@@ -745,8 +746,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  minPlatformRange: 0
-  maxPlatformRange: 0
+  minPlatformRange: 4
+  maxPlatformRange: 25
   _platformRange: 5
   scrollMultiplier: 2
 --- !u!20 &1828202562
@@ -803,6 +804,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20ff21c1115c8944b0ec08f09d8cda7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1828202564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828202556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8311589ae2cbafd45acf06171de386bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingPlatform: {fileID: 0}
+  platformLocation: {fileID: 1152753795}
 --- !u!1 &1962476859
 GameObject:
   m_ObjectHideFlags: 0

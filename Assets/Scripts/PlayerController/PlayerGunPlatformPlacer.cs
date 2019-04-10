@@ -56,7 +56,7 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
   /// <param name="platformType">Type of platform being spawned</param>
   private void PlaceNewPlatform(GameObject platformPrefab, ProjectionType platformType)
   {
-    GameObject newPlatform = Instantiate(platformPrefab, platformLocation);
+    GameObject newPlatform = Instantiate(platformPrefab, platformLocation.position, platformLocation.rotation);
     newPlatform.name += ("(Clone)");
 
     if (platformType == ProjectionType.MovingPlatform)

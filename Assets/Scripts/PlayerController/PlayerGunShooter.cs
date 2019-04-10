@@ -15,11 +15,13 @@ public class PlayerGunShooter : MonoBehaviour
   private void Awake()
   {
     // OnPlatformSelected
+    GetComponent<PlayerGunPlatformSelector>().OnPlatformSelected += SelectPlatform;
     GetComponent<PlayerInputManager>().OnGunTriggered += ToggleGunTrigger;
     GetComponent<PlayerInputManager>().OnGunShot += ShootGun;
   }
   private void OnDestroy()
   {
+    GetComponent<PlayerGunPlatformSelector>().OnPlatformSelected -= SelectPlatform;
     GetComponent<PlayerInputManager>().OnGunTriggered -= ToggleGunTrigger;
     GetComponent<PlayerInputManager>().OnGunShot -= ShootGun;
   }
@@ -63,5 +65,11 @@ public class PlayerGunShooter : MonoBehaviour
         OnGunStandby();
         break;
     }
+  }
+
+  public void SelectPlatform(GameObject prefab, ProjectionType _projectionType)
+  {
+    this.platformPrefab = prefab;
+    this.projectionType = _projectionType;
   }
 }

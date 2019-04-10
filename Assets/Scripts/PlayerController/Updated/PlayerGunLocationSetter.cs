@@ -21,8 +21,12 @@ public class PlayerGunLocationSetter : MonoBehaviour
     }
     set
     {
-      if (value >= minPlatformRange && value <= maxPlatformRange)
-        _platformRange = value;
+      if (value <= minPlatformRange)
+        value = minPlatformRange;
+      if (value >= maxPlatformRange)
+        value = maxPlatformRange;
+
+      _platformRange = value;
     }
   }
 
@@ -35,6 +39,7 @@ public class PlayerGunLocationSetter : MonoBehaviour
 
   private void UpdateRange(float gunRange)
   {
+    Debug.Log($"Gun Range: {gunRange}");
     PlatformRange += (gunRange * scrollMultiplier);
   }
 
