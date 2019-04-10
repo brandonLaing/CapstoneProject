@@ -31,11 +31,16 @@ public class PlayerGunShooter : MonoBehaviour
   /// </summary>
   private void ShootGun()
   {
+    System.Text.StringBuilder sb = new System.Text.StringBuilder();
     if (gunState == GunState.Standby)
       return;
 
     if (gunState == GunState.PlaceingMovingEndPoint)
+    {
       OnGunFired(platformPrefab, gunState, projectionType);
+      gunState = GunState.Triggered;
+      return;
+    }
 
     if (gunState == GunState.Triggered)
     {
@@ -67,8 +72,14 @@ public class PlayerGunShooter : MonoBehaviour
     }
   }
 
+  public event System.Action OnMovingInterupted = delegate { };
   public void SelectPlatform(GameObject prefab, ProjectionType _projectionType)
   {
+    if (gunState == GunState.PlaceingMovingEndPoint)
+    {
+      OnMovingInterupted();
+      gunState = GunState.Triggered;
+    }
     this.platformPrefab = prefab;
     this.projectionType = _projectionType;
   }

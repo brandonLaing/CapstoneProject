@@ -54,13 +54,13 @@ public class PlayerInputManager : MonoBehaviour
     Vector3 moveDirection = new Vector3();
 
     if (Input.GetKey(keys.forwardMovement))
-      moveDirection += Vector3.forward;
+      moveDirection += transform.forward;
     if (Input.GetKey(keys.backMovement))
-      moveDirection += Vector3.back;
+      moveDirection -= transform.forward;
     if (Input.GetKey(keys.leftMovement))
-      moveDirection += Vector3.left;
+      moveDirection -= transform.right;
     if (Input.GetKey(keys.rightMovement))
-      moveDirection += Vector3.right;
+      moveDirection += transform.right;
 
     OnMove(moveDirection);
 
