@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerUnlock : MonoBehaviour
 {
   public ProjectionType unlockType;
-  public bool destroyOnEnter;
-  public bool unlockState;
+  public bool destroyOnEnter = true;
+  public bool unlockState = true;
   public bool changesPrefab;
   public GameObject newPrefab;
 

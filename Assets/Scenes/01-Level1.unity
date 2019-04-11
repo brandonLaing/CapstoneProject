@@ -1172,11 +1172,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1605,7 +1605,7 @@ PrefabInstance:
     - target: {fileID: 3190206562870656465, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2057185
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3190206562870656465, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
         type: 3}
@@ -1615,7 +1615,7 @@ PrefabInstance:
     - target: {fileID: 3190206562870656465, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -45.41438
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3190206562870656465, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
         type: 3}
@@ -1655,6 +1655,26 @@ PrefabInstance:
     - target: {fileID: 3190206562870656465, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053703982551781187, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
+        type: 3}
+      propertyPath: bounceAvailable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053703982551781187, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
+        type: 3}
+      propertyPath: speedAvailable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053703982551781187, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
+        type: 3}
+      propertyPath: movingAvailable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053703982551781187, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
+        type: 3}
+      propertyPath: staticAvailable
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
