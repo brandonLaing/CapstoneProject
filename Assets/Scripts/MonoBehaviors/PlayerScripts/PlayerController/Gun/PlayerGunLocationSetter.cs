@@ -63,9 +63,4 @@ public class PlayerGunLocationSetter : MonoBehaviour
 
     OnPlatformLocationChanged(position, rotation);
   }
-
-  public void SetLocation(Vector3 position, Vector3 rotationEuler)
-  {
-
-  }
 }

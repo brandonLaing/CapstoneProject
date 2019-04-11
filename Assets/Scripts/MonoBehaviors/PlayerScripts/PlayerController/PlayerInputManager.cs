@@ -61,12 +61,16 @@ public class PlayerInputManager : MonoBehaviour
       moveDirection -= transform.right;
     if (Input.GetKey(keys.rightMovement))
       moveDirection += transform.right;
+    moveDirection.Normalize();
+
+    float x = Input.GetAxis("AllLeftStickX"), y = Input.GetAxis("AllLeftStickY");
+    moveDirection += (transform.forward * y) + (transform.right * x);
 
     OnMove(moveDirection);
 
-    if (Input.GetKeyDown(keys.jumpKey))
+    if (Input.GetKeyDown(keys.jumpKey) || Input.GetButtonDown("AllaButton"))
       OnJumpPressed();
-    if (Input.GetKey(keys.jumpKey))
+    if (Input.GetKey(keys.jumpKey) || Input.GetButton("AllaButton"))
       OnJumpHeld();
   }
 
@@ -74,8 +78,8 @@ public class PlayerInputManager : MonoBehaviour
   {
     Vector2 cameraDirection = new Vector2
     {
-      x = Input.GetAxis("Mouse X"),
-      y = Input.GetAxis("Mouse Y")
+      x = Input.GetAxis("Mouse X") + Input.GetAxis("AllRightStickX"),
+      y = Input.GetAxis("Mouse Y") + Input.GetAxis("AllRightStickY")
     };
 
     OnLook(cameraDirection);
@@ -83,27 +87,27 @@ public class PlayerInputManager : MonoBehaviour
 
   private void CyclePlatforms()
   {
-    if (Input.GetKeyDown(keys.nextPlatform))
+    if (Input.GetKeyDown(keys.nextPlatform) || Input.GetButtonDown("AllRightBumper"))
       OnNextPlatform();
-    if (Input.GetKeyDown(keys.previousPlatform))
+    if (Input.GetKeyDown(keys.previousPlatform) || Input.GetButtonDown("AllLeftBumper"))
       OnPreviousPlatform();
   }
 
   private void SelectPlatform()
   {
-    if (Input.GetKeyDown(keys.firstPlatform))
+    if (Input.GetKeyDown(keys.firstPlatform) || Input.GetAxis("AllDPadY") > 0.5F)
       OnPlatformOneSelected();
-    if (Input.GetKeyDown(keys.secondPlatform))
+    if (Input.GetKeyDown(keys.secondPlatform) || Input.GetAxis("AllDPadY") < -0.5F)
       OnPlatformTwoSelected();
-    if (Input.GetKeyDown(keys.thirdPlatform))
+    if (Input.GetKeyDown(keys.thirdPlatform) || Input.GetAxis("AllDPadX") < -0.5F)
       OnPlatformThreeSelected();
-    if (Input.GetKeyDown(keys.fourthPlatform))
+    if (Input.GetKeyDown(keys.fourthPlatform) || Input.GetAxis("AllDPadX") > 0.5F)
       OnPlatformFourSelected();
   }
 
   private void InteractionCheck()
   {
-    if (Input.GetKeyDown(keys.interact))
+    if (Input.GetKeyDown(keys.interact) || Input.GetButtonDown("AllbButton"))
       OnInteract();
   }
 }
