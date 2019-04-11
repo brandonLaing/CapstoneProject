@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformBounce : MonoBehaviour
 {
-  public List<Rigidbody> objectsToToss = new List<Rigidbody>();
+  private List<Rigidbody> objectsToToss = new List<Rigidbody>();
   public float bounceForce = 10;
 
   private readonly int numberOfTestObjects = 10;

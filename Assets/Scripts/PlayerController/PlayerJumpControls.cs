@@ -4,35 +4,18 @@ using UnityEngine;
 
 public class PlayerJumpControls : MonoBehaviour
 {
-  /// <summary>
-  /// The force that is added onto the player for jumps
-  /// </summary>
   [Tooltip("The force that is added onto the player for jumps")]
   [Range(2, 10)]
-  public float jumpVelocity;
+  public float jumpVelocity = 5;
 
   /// <summary>
-  /// The ammount of force that is added onto the player as they fall
-  /// </summary>
-  [Tooltip("The amount of force that is added onto the player as they fall")]
-  [Range(1, 5)]
-  public float fallMultiplier = 2.5F;
-
-  /// <summary>
-  /// The amount of force being added while jumping to slow down jump
-  /// </summary>
-  [Tooltip("The amount of force being added while jumping to slow down jump")]
-  public float lowJumpMultiplier = 2F;
-
-  /// <summary>
-  /// Character controllers ground checker
-  /// </summary>
-  private PlayerGroundChecker groundChecker;
-
-  /// <summary>
-  /// Current request from the player to jump
+  /// Check for jump
   /// </summary>
   private bool doJump = false;
+  /// <summary>
+  /// Check for touching ground
+  /// </summary>
+  private bool isTouchingGround = false;
 
   /// <summary>
   /// Reference to the objects rigidbody
@@ -41,43 +24,34 @@ public class PlayerJumpControls : MonoBehaviour
 
   private void Awake()
   {
-    groundChecker = GetComponent<PlayerGroundChecker>();
-    rb = GetComponent<Rigidbody>();
-    rb.freezeRotation = true;
-  }
+    GetComponent<PlayerGroundChecker>().OnTouchingGround += SetTouchedGround;
+    GetComponent<PlayerInputManager>().OnJumpPressed += SetDoJump;
 
-  private void Update()
-  {
-    if (Input.GetKeyDown(KeyCode.Space) && groundChecker.IsTouchingGround)
-      doJump = true;
+    rb = GetComponent<Rigidbody>();
   }
 
   private void FixedUpdate()
   {
-    Jump();
-    Fall();
+    if (doJump && isTouchingGround)
+    {
+      Jump();
+    }
+
+    doJump = false;
+    isTouchingGround = false;
   }
 
   /// <summary>
   /// Logic for making the player jump
   /// </summary>
-  private void Jump()
-  {
-    if (doJump)
-    {
-      doJump = false;
-      rb.AddForce(transform.up * jumpVelocity, ForceMode.Impulse);
-    }
-  }
+  private void Jump() => rb.AddForce(transform.up * jumpVelocity, ForceMode.Impulse);
 
-  /// <summary>
-  /// A little bit of code that makes the players jump feel better
-  /// </summary>
-  private void Fall()
+  private void SetTouchedGround() => isTouchingGround = true;
+  private void SetDoJump() => doJump = true;
+
+  private void OnDestroy()
   {
-    if (rb.velocity.y < 0)
-      rb.velocity += (Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime);
-    else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
-      rb.velocity += (Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime);
+    GetComponent<PlayerGroundChecker>().OnTouchingGround -= SetTouchedGround;
+    GetComponent<PlayerInputManager>().OnJumpPressed -= SetDoJump;
   }
 }

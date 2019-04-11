@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformSpeed : MonoBehaviour
 {
-  public List<Rigidbody> objectsToBoost = new List<Rigidbody>();
+  private List<Rigidbody> objectsToBoost = new List<Rigidbody>();
 
   private readonly int numberOfTestObjects = 10;
   public float speedForce = 10;

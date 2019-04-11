@@ -8,57 +8,40 @@ using UnityEngine;
 /// </summary>
 public class PlayerInteractionChecker : MonoBehaviour
 {
-  /// <summary>
-  /// The camera for the player controller
-  /// </summary>
-  [Tooltip("The camera for the player controller")]
-  public Transform cameraTransform;
-
-  /// <summary>
-  /// Range the the player will be able to interact with things
-  /// </summary>
   [Tooltip("Range the the player will be able to interact with things")]
-  public float range;
+  [Range(1, 10)]
+  public float range = 3;
 
-  /// <summary>
-  /// Layer the raycast will be shot on
-  /// </summary>
-  [Tooltip("Layer the raycast will be shot on")]
+  [Tooltip("Layer to raycast on")]
   public LayerMask targetlayer;
 
   /// <summary>
-  /// Checks if the players raycast hit this frame
+  /// Players viewing camera
   /// </summary>
-  private bool hitThisFrame;
+  private Transform cameraTransform;
 
-  private void Update()
+  private void Awake()
   {
-    hitThisFrame = false;
+    cameraTransform = GetComponentInChildren<Camera>().transform;
+    GetComponent<PlayerInputManager>().OnInteract += TryToInteract;
+  }
+
+  public void TryToInteract()
+  {
+    Debug.Log("Sent interaction call");
     RaycastHit hit;
 
     if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, range, (int)targetlayer))
     {
-      hitThisFrame = true;
-      if (Input.GetKeyDown(KeyCode.F))
-      {
-        if (hit.transform.GetComponent<IInteractable>() != null)
-          hit.transform.GetComponent<IInteractable>().Interact();
-        else if (hit.transform.GetComponentInParent<IInteractable>() != null)
-          hit.transform.GetComponentInParent<IInteractable>().Interact();
-      }
+      if (hit.transform.GetComponent<IInteractable>() != null)
+        hit.transform.GetComponent<IInteractable>().Interact();
+      else if (hit.transform.GetComponentInParent<IInteractable>() != null)
+        hit.transform.GetComponentInParent<IInteractable>().Interact();
     }
   }
 
-  private void OnDrawGizmos()
+  private void OnDestroy()
   {
-    if (UnityEditor.EditorApplication.isPlaying)
-    {
-      if (hitThisFrame)
-        Gizmos.color = Color.red;
-      else
-        Gizmos.color = Color.green;
-
-      Gizmos.DrawLine(cameraTransform.position, cameraTransform.position + cameraTransform.forward * range);
-    }
+    GetComponent<PlayerInputManager>().OnInteract -= TryToInteract;
   }
 }

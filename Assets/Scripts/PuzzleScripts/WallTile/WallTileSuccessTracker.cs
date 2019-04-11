@@ -107,21 +107,4 @@ public class WallTileSuccessTracker : MonoBehaviour
     else
       CheckPassed = false;
   }
-
-  #region Achived Version
-  //public void CheckForCorrectState()
-  //{
-  //  if (rotator.tileCurrentState == tileCorrectState)
-  //  {
-  //    if (previousTiles == null)
-  //      CheckPassed = true;
-  //    else if (previousTiles.CheckPassed)
-  //      CheckPassed = true;
-  //    else
-  //      CheckPassed = false;
-  //  }
-  //  else
-  //    CheckPassed = false;
-  //}
-  #endregion
 }

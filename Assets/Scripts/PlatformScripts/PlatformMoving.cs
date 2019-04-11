@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class PlatformMoving : MonoBehaviour
 {
-  public float moveTime = 5F;
-  public float currentMoveTime = 0F;
-
-  public float moveSpeed = 1F;
-  public bool moveForward = true;
-
   public Vector3 startPosition;
   public Vector3 endPosition;
 
-  public bool movingToEnd;
+  public float moveSpeed = 1F;
   public float swapCooldown = 1F;
-  public float swapTimer = 0;
   public bool startMoving;
+  [Range(0.01F, 1F)]
+  public float distanceOfSatisfaction = 0.1F;
+
+
+  private bool moveForward;
+  private float swapTimer = 0F;
 
   private void Start()
   {
@@ -41,7 +40,7 @@ public class PlatformMoving : MonoBehaviour
   {
     swapTimer += Time.fixedDeltaTime;
 
-    if (movingToEnd)
+    if (moveForward)
     {
       transform.position = Vector3.MoveTowards(transform.position, endPosition, moveSpeed * Time.fixedDeltaTime);
     }
@@ -50,10 +49,10 @@ public class PlatformMoving : MonoBehaviour
       transform.position = Vector3.MoveTowards(transform.position, startPosition, moveSpeed * Time.fixedDeltaTime);
     }
 
-    if (Vector3.Distance(transform.position, startPosition) < .1F || Vector3.Distance(transform.position, endPosition) < .1F)
+    if (Vector3.Distance(transform.position, startPosition) < distanceOfSatisfaction || Vector3.Distance(transform.position, endPosition) < distanceOfSatisfaction)
       if (swapTimer > swapCooldown)
       {
-        movingToEnd = !movingToEnd;
+        moveForward = !moveForward;
         swapTimer = 0;
       }
   }
@@ -62,18 +61,16 @@ public class PlatformMoving : MonoBehaviour
   {
     if (collision.gameObject.GetComponent<Rigidbody>() && !collision.gameObject.GetComponent<Rigidbody>().isKinematic)
     {
-      if (collision.gameObject.CompareTag("Player"))
-        collision.transform.parent.parent = this.transform;
-      else
-        collision.transform.parent = this.transform;
+      for (Transform tf = collision.transform; tf != null; tf = tf.parent)
+        if (tf.parent == null)
+          tf.parent = this.transform;
     }
   }
 
   private void OnCollisionExit(Collision collision)
   {
-    if (collision.transform.parent == this.transform)
-      collision.transform.parent = null;
-    else if (collision.transform.parent != null && collision.transform.parent.parent == this.transform)
-      collision.transform.parent.parent = null;
+    for (Transform tf = collision.transform; tf != null; tf = tf.parent)
+      if (tf.parent == this.transform)
+        tf.parent = null;
   }
 }

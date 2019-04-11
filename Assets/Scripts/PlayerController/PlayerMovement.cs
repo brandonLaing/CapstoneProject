@@ -2,40 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerPlatformGun))]
-[RequireComponent(typeof(PlayerCameraControls))]
-[RequireComponent(typeof(PlayerJumpControls))]
-[RequireComponent(typeof(PlayerGroundChecker))]
 public class PlayerMovement : MonoBehaviour
 {
+  private void Awake()
+  {
+    GetComponent<PlayerInputManager>().OnMove += SetMoveDirection;
+  }
+
   /// <summary>
   /// The players WASD movement speed
   /// </summary>'
-  [Tooltip("The players WASD movement speed")]
-  [Range(5, 20)]
-  public float moveSpeed = 10;
+  [Tooltip("The players WASD movement speed")] [Range(5, 20)] [SerializeField]
+  private float moveSpeed = 10;
 
   /// <summary>
-  /// Current direction the player is trying to move in
+  /// Move direction grabbed from the input manager
   /// </summary>
-  private Vector3 moveDirection = Vector3.zero;
+  private Vector3 rawMoveDirection = Vector3.zero;
 
-  private void Update()
+
+  private void SetMoveDirection(Vector3 moveDirection)
   {
-    moveDirection = new Vector3();
-
-    if (Input.GetKey(KeyCode.W))
-      moveDirection += transform.forward;
-    if (Input.GetKey(KeyCode.S))
-      moveDirection -= transform.forward;
-    if (Input.GetKey(KeyCode.D))
-      moveDirection += transform.right;
-    if (Input.GetKey(KeyCode.A))
-      moveDirection -= transform.right;
+    rawMoveDirection = moveDirection;
   }
 
   private void FixedUpdate()
   {
-    transform.position += moveDirection.normalized * moveSpeed * Time.fixedDeltaTime;
+    transform.position += (rawMoveDirection.normalized * moveSpeed) * Time.fixedDeltaTime;
+    rawMoveDirection = Vector3.zero;
   }
 }
