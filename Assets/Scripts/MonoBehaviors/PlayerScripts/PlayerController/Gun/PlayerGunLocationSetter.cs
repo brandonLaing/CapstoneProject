@@ -7,11 +7,14 @@ public class PlayerGunLocationSetter : MonoBehaviour
   public LayerMask layerMask;
 
   [SerializeField]
-  private float minPlatformRange, maxPlatformRange;
+  private float minPlatformRange = 4, maxPlatformRange = 20;
   [SerializeField]
   private float _platformRange;
   [SerializeField]
-  private float scrollMultiplier;
+  private float scrollMultiplier = 4;
+
+  [SerializeField]
+  private Transform projectionLocation;
 
   public float PlatformRange
   {
@@ -39,7 +42,6 @@ public class PlayerGunLocationSetter : MonoBehaviour
 
   private void UpdateRange(float gunRange)
   {
-    Debug.Log($"Gun Range: {gunRange}");
     PlatformRange += (gunRange * scrollMultiplier);
   }
 
@@ -56,6 +58,14 @@ public class PlayerGunLocationSetter : MonoBehaviour
 
     rotation = transform.eulerAngles;
 
+    projectionLocation.position = position;
+    projectionLocation.rotation = Quaternion.Euler(rotation);
+
     OnPlatformLocationChanged(position, rotation);
+  }
+
+  public void SetLocation(Vector3 position, Vector3 rotationEuler)
+  {
+
   }
 }

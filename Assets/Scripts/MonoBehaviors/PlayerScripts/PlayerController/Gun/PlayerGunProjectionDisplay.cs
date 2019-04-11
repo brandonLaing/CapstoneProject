@@ -9,7 +9,6 @@ public class PlayerGunProjectionDisplay : MonoBehaviour
   private void Awake()
   {
     GetComponent<PlayerGunPlatformSelector>().OnPlatformSelected += ChangeDisplay;
-    GetComponent<PlayerGunLocationSetter>().OnPlatformLocationChanged += SetEndPoint;
     GetComponent<PlayerGunShooter>().OnGunTriggered += ShowProjection;
     GetComponent<PlayerGunShooter>().OnGunStandby += HideProjection;
   }
@@ -17,7 +16,8 @@ public class PlayerGunProjectionDisplay : MonoBehaviour
   private void OnDestroy()
   {
     GetComponent<PlayerGunPlatformSelector>().OnPlatformSelected -= ChangeDisplay;
-    GetComponent<PlayerGunLocationSetter>().OnPlatformLocationChanged -= SetEndPoint;
+    GetComponent<PlayerGunShooter>().OnGunTriggered -= ShowProjection;
+    GetComponent<PlayerGunShooter>().OnGunStandby -= HideProjection;
   }
 
   private void ChangeDisplay(GameObject platformPrefab, ProjectionType _projectionType)
@@ -26,12 +26,6 @@ public class PlayerGunProjectionDisplay : MonoBehaviour
     Color _matColor = platformPrefab.GetComponentInChildren<MeshRenderer>().sharedMaterial.color;
     _matColor.a = 0.5F;
     projectionLocation.GetComponent<MeshRenderer>().material.color = _matColor;
-  }
-
-  private void SetEndPoint(Vector3 position, Vector3 rotation)
-  {
-    projectionLocation.transform.position = position;
-    projectionLocation.transform.rotation = Quaternion.Euler(rotation);
   }
 
   private void ShowProjection()

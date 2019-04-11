@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerGunPlatformSelector : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerGunPlatformSelector : MonoBehaviour
   [SerializeField]
   private ProjectionType _projectionType = ProjectionType.Length;
 
-  public event System.Action<GameObject, ProjectionType> OnPlatformSelected = delegate { };
+  public event Action<GameObject, ProjectionType> OnPlatformSelected = delegate { };
 
   private void Start()
   {
@@ -143,6 +144,44 @@ public class PlayerGunPlatformSelector : MonoBehaviour
     {
       OnPlatformSelected(bouncePrefab, ProjectionType.BouncePlatform);
       _projectionType = ProjectionType.BouncePlatform;
+    }
+  }
+
+  public void NewPlatformUnlocked(ProjectionType _projectionType, GameObject prefab)
+  {
+    switch (_projectionType)
+    {
+      case ProjectionType.StaticPlatform:
+        staticPrefab = prefab;
+        break;
+      case ProjectionType.MovingPlatform:
+        movingPrefab = prefab;
+        break;
+      case ProjectionType.SpeedPlatform:
+        speedPrefab = prefab;
+        break;
+      case ProjectionType.BouncePlatform:
+        bouncePrefab = prefab;
+        break;
+    }
+  }
+
+  public void NewPlatformUnlocked(ProjectionType _projectionType, bool setState)
+  {
+    switch (_projectionType)
+    {
+      case ProjectionType.StaticPlatform:
+        staticAvailable = setState;
+        break;
+      case ProjectionType.MovingPlatform:
+        movingAvailable = setState;
+        break;
+      case ProjectionType.SpeedPlatform:
+        speedAvailable = setState;
+        break;
+      case ProjectionType.BouncePlatform:
+        bounceAvailable = setState;
+        break;
     }
   }
 }

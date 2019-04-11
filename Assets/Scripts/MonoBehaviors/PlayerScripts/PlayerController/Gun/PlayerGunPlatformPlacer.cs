@@ -13,12 +13,11 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
   public Transform platformLocation;
   #endregion
 
-  #region Start/End Functions
+  #region Unity Events
   private void Awake()
   {
     GetComponent<PlayerGunShooter>().OnGunFired += ShootGun;
     GetComponent<PlayerGunShooter>().OnGunStandby += DestroyMovingPlatform;
-    GetComponent<PlayerGunLocationSetter>().OnPlatformLocationChanged += SetLocation;
     GetComponent<PlayerGunShooter>().OnMovingInterupted += DestroyMovingPlatform;
   }
 
@@ -26,8 +25,12 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
   {
     GetComponent<PlayerGunShooter>().OnGunFired -= ShootGun;
     GetComponent<PlayerGunShooter>().OnGunStandby -= DestroyMovingPlatform;
-    GetComponent<PlayerGunLocationSetter>().OnPlatformLocationChanged -= SetLocation;
     GetComponent<PlayerGunShooter>().OnMovingInterupted -= DestroyMovingPlatform;
+  }
+
+  private void FixedUpdate()
+  {
+    
   }
   #endregion
 
@@ -93,12 +96,6 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
     OnNewPlatformCreated(movingPlatform);
     OnEndPointSet(platformLocation.transform.position);
     OnEndPointSet -= movingPlatform.GetComponent<PlatformMoving>().AddEndPoint;
-  }
-
-  public void SetLocation(Vector3 position, Vector3 rotationEuler)
-  {
-    platformLocation.position = position;
-    platformLocation.rotation = Quaternion.Euler(rotationEuler);
   }
   #endregion
 }
