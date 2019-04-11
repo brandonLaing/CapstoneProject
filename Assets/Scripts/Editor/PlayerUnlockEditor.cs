@@ -24,12 +24,12 @@ public class PlayerUnlockEditor : Editor
       );
 
     scriptTarget.unlockState = EditorGUILayout.Toggle(
-      new GUIContent(),
+      new GUIContent("State to set", "Sets state of targeting platform, if false with no longer be able to acess that platform"),
       scriptTarget.unlockState
       );
 
     scriptTarget.changesPrefab = EditorGUILayout.ToggleLeft(
-      new GUIContent(),
+      new GUIContent("Change Prefab", "If selected will spap out prefab"),
       scriptTarget.changesPrefab
       );
 
@@ -37,7 +37,7 @@ public class PlayerUnlockEditor : Editor
     {
       EditorGUI.indentLevel++;
       scriptTarget.newPrefab = (GameObject)EditorGUILayout.ObjectField(
-        new GUIContent(),
+        new GUIContent("New Prefab", "Prefab that will swap with the new platform"),
         scriptTarget.newPrefab,
         typeof(GameObject),
         false

@@ -2,14 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PlayerUnlock : MonoBehaviour
 {
   public ProjectionType unlockType;
   public bool destroyOnEnter = true;
   public bool unlockState = true;
-  public bool changesPrefab;
+
+  public bool changesPrefab = true;
   public GameObject newPrefab;
+
+  private void Start()
+  {
+    if (changesPrefab && newPrefab == null)
+    {
+      Debug.LogWarning($"{transform.name} set to swap platform but has no new platform. Setting change trigger to false");
+      changesPrefab = false;
+    }
+  }
 
   private void OnTriggerEnter(Collider other)
   {
