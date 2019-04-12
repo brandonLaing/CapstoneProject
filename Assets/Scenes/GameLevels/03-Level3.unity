@@ -22069,7 +22069,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17496
+  m_Name: pb_Mesh18028
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -24851,6 +24851,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTileManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: previousTile
+      value: 
+      objectReference: {fileID: 740822478}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: tileStartState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 740822478}
     - target: {fileID: 5341950617061942729, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: doorsToEffect.Array.data[0]
@@ -24921,21 +24936,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 320519638}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: previousTile
-      value: 
-      objectReference: {fileID: 740822478}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: tileStartState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: nextTile
-      value: 
-      objectReference: {fileID: 740822478}
     - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -25779,6 +25779,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
+        type: 3}
+      propertyPath: changesPrefab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
+        type: 3}
+      propertyPath: destroyOnEnter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
+        type: 3}
+      propertyPath: unlockState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
+        type: 3}
+      propertyPath: unlockType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 779a539f172bbcf4faba0e3e3f94c327, type: 3}

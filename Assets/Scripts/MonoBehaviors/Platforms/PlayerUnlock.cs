@@ -5,25 +5,25 @@ using UnityEngine;
 public class PlayerUnlock : MonoBehaviour
 {
   public ProjectionType unlockType;
-  public bool destroyOnEnter = true;
-  public bool unlockState = true;
+  public bool destroyOnEnter;
+  public bool unlockState;
 
-  public bool changesPrefab = false;
+  public bool changesPrefab;
   public GameObject newPrefab;
 
-  private void Start()
-  {
-    if (changesPrefab && newPrefab == null)
-    {
-      Debug.LogWarning($"{transform.name} set to swap platform but has no new platform. Setting change trigger to false");
-      changesPrefab = false;
-    }
-  }
+  //public ProjectionType _unlockType;
+  //public bool _destroyOnEnter;
+  //public bool _unlockState;
+
+  //public bool _changesPrefab;
+  //public GameObject _newPrefab;
 
   private void OnTriggerEnter(Collider other)
   {
     if (other.tag == "Player")
     {
+      Debug.Log("Shit");
+    
       PlayerGunPlatformSelector selector = other.GetComponent<PlayerGunPlatformSelector>();
 
       if (changesPrefab)
