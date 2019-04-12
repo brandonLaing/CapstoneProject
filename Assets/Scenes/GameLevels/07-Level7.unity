@@ -947,6 +947,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8050600581818363447, guid: 48d9753c7ff0c284a9409d85b7e9d656,
         type: 3}
+    - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
+        type: 3}
+      propertyPath: unlockType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
+        type: 3}
+      propertyPath: destroyOnEnter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
+        type: 3}
+      propertyPath: unlockState
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 779a539f172bbcf4faba0e3e3f94c327, type: 3}
 --- !u!4 &523850450 stripped

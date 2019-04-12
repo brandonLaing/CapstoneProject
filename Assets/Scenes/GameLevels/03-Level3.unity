@@ -19375,14 +19375,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1630281991}
-    - target: {fileID: 1612737767, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCurrentState
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1612737768, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 1228573019}
+    - target: {fileID: 1612737767, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCurrentState
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &740822478 stripped
@@ -25783,7 +25783,7 @@ PrefabInstance:
     - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
         type: 3}
       propertyPath: changesPrefab
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
         type: 3}
@@ -25793,12 +25793,12 @@ PrefabInstance:
     - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
         type: 3}
       propertyPath: unlockState
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
         type: 3}
       propertyPath: unlockType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 779a539f172bbcf4faba0e3e3f94c327, type: 3}

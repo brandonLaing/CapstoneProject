@@ -7668,6 +7668,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTileManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 2120114758}
     - target: {fileID: 5341950617061942729, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: doorsToEffect.Array.size
@@ -7748,6 +7753,51 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1327234110}
+    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418360538821880, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_Name
+      value: WallTile 2,1
+      objectReference: {fileID: 0}
     - target: {fileID: 5341950617061942734, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: puzzleTiles.Array.size
@@ -8198,56 +8248,6 @@ PrefabInstance:
       propertyPath: puzzleTiles.Array.data[89]
       value: 
       objectReference: {fileID: 1084637746}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: nextTile
-      value: 
-      objectReference: {fileID: 2120114758}
-    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159418360538821880, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_Name
-      value: WallTile 2,1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdb44600408915c47a118fd735c8841b, type: 3}
 --- !u!4 &1084637745 stripped
@@ -10629,6 +10629,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8050600581818363447, guid: 44ac782f0caadf4409d21d41f494c318,
         type: 3}
+    - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
+        type: 3}
+      propertyPath: unlockType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
+        type: 3}
+      propertyPath: destroyOnEnter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194272415096794772, guid: 779a539f172bbcf4faba0e3e3f94c327,
+        type: 3}
+      propertyPath: unlockState
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 779a539f172bbcf4faba0e3e3f94c327, type: 3}
 --- !u!1 &1563160163
