@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerUnlock : MonoBehaviour
 {
   public ProjectionType unlockType;
-  public bool destroyOnEnter = false;
+  public bool destroyOnEnter = true;
   public bool unlockState = true;
 
   public bool changesPrefab = false;

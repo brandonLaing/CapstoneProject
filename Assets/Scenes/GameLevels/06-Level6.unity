@@ -17382,6 +17382,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuzzleEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 2974396466530890733, guid: fce8a86e00f3d5146a7c7f27d6977b3f,
+        type: 3}
+      propertyPath: doorsToEffect.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974396466530890733, guid: fce8a86e00f3d5146a7c7f27d6977b3f,
+        type: 3}
+      propertyPath: doorsToEffect.Array.data[0]
+      value: 
+      objectReference: {fileID: 1826224665}
     - target: {fileID: 2974396466530890730, guid: fce8a86e00f3d5146a7c7f27d6977b3f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17437,16 +17447,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2974396466530890733, guid: fce8a86e00f3d5146a7c7f27d6977b3f,
-        type: 3}
-      propertyPath: doorsToEffect.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2974396466530890733, guid: fce8a86e00f3d5146a7c7f27d6977b3f,
-        type: 3}
-      propertyPath: doorsToEffect.Array.data[0]
-      value: 
-      objectReference: {fileID: 1826224665}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fce8a86e00f3d5146a7c7f27d6977b3f, type: 3}
 --- !u!43 &661916956
@@ -43166,7 +43166,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24696
+  m_Name: pb_Mesh41226
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2

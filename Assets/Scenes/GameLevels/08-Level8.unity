@@ -7668,11 +7668,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTileManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: nextTile
-      value: 
-      objectReference: {fileID: 2120114758}
     - target: {fileID: 5341950617061942729, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: doorsToEffect.Array.size
@@ -8203,6 +8198,11 @@ PrefabInstance:
       propertyPath: puzzleTiles.Array.data[89]
       value: 
       objectReference: {fileID: 1084637746}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 2120114758}
     - target: {fileID: 9159418360538821881, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: m_LocalRotation.x
