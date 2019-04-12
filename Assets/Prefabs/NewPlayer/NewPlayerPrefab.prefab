@@ -312,6 +312,7 @@ MonoBehaviour:
   maxPlatformRange: 20
   _platformRange: 0
   scrollMultiplier: 10
+  projectionLocation: {fileID: 2681211411496417374}
 --- !u!114 &4053703982551781188
 MonoBehaviour:
   m_ObjectHideFlags: 0
