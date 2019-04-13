@@ -12,6 +12,11 @@ public class PlayerGunShooter : MonoBehaviour
   private GameObject platformPrefab;
   private ProjectionType projectionType = ProjectionType.Length;
 
+  [SerializeField]
+  private float gunCooldown = 10; // seconds
+  [SerializeField]
+  private float gunTimer = 0;
+
   private void Awake()
   {
     // OnPlatformSelected
@@ -31,21 +36,29 @@ public class PlayerGunShooter : MonoBehaviour
   /// </summary>
   private void ShootGun()
   {
-    System.Text.StringBuilder sb = new System.Text.StringBuilder();
-    if (gunState == GunState.Standby)
+    if (gunState == GunState.Standby || Time.time < gunTimer)
+    {
+      if (Time.time < gunTimer)
+        gunTimer -= 0.1F;
       return;
+    }
+
 
     if (gunState == GunState.PlaceingMovingEndPoint)
     {
       OnGunFired(platformPrefab, gunState, projectionType);
       gunState = GunState.Triggered;
+      gunTimer = Time.time + gunCooldown;
       return;
     }
 
     if (gunState == GunState.Triggered)
     {
       if (projectionType != ProjectionType.MovingPlatform)
+      {
         OnGunFired(platformPrefab, gunState, projectionType);
+        gunTimer = Time.time + gunCooldown;
+      }
       else
       {
         OnGunFired(platformPrefab, gunState, projectionType);

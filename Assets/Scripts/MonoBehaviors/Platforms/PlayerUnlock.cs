@@ -11,13 +11,6 @@ public class PlayerUnlock : MonoBehaviour
   public bool changesPrefab;
   public GameObject newPrefab;
 
-  //public ProjectionType _unlockType;
-  //public bool _destroyOnEnter;
-  //public bool _unlockState;
-
-  //public bool _changesPrefab;
-  //public GameObject _newPrefab;
-
   private void OnTriggerEnter(Collider other)
   {
     if (other.tag == "Player")
@@ -30,35 +23,6 @@ public class PlayerUnlock : MonoBehaviour
         selector.NewPlatformUnlocked(unlockType, newPrefab);
       else
         selector.NewPlatformUnlocked(unlockType, unlockState);
-
-      /**
-      //switch (unlockType)
-      //{
-      //  case ProjectionType.StaticPlatform:
-      //    selector.staticAvailable = unlockState;
-      //    if (changesPrefab)
-      //      selector.staticPrefab = newPrefab;
-      //    break;
-
-      //  case ProjectionType.MovingPlatform:
-      //    selector.movingAvailable = unlockState;
-      //    if (changesPrefab)
-      //      selector.movingPrefab = newPrefab;
-      //    break;
-
-      //  case ProjectionType.SpeedPlatform:
-      //    selector.speedAvailable = unlockState;
-      //    if (changesPrefab)
-      //      selector.speedPrefab = newPrefab;
-      //    break;
-
-      //  case ProjectionType.BouncePlatform:
-      //    selector.bounceAvailable = unlockState;
-      //    if (changesPrefab)
-      //      selector.bounceAvailable = newPrefab;
-      //    break;
-      //}
-  */
 
       if (destroyOnEnter)
         Destroy(this.gameObject);

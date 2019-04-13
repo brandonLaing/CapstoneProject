@@ -96,6 +96,7 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
     OnNewPlatformCreated(movingPlatform);
     OnEndPointSet(platformLocation.transform.position);
     OnEndPointSet -= movingPlatform.GetComponent<PlatformMoving>().AddEndPoint;
+    movingPlatform = null;
   }
   #endregion
 }

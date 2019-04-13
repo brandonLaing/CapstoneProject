@@ -39,14 +39,37 @@ public class PlayerInputManager : MonoBehaviour
     InteractionCheck();
   }
 
+  bool rightReset = true, leftReset = true;
+  float xHeldTimer, yHeldTimer;
   private void GetGunActions()
   {
-    if (Input.GetMouseButtonDown(0))
-      OnGunTriggered();
-    if (Input.GetMouseButtonDown(1))
-      OnGunShot();
+    if (Input.GetAxis("AllRightTrigger") < 0.2F) rightReset = true;
+    if (Input.GetAxis("AllLeftTrigger") < 0.2F) leftReset = true;
 
-    OnGunRangeChanged(Input.GetAxis("Mouse ScrollWheel"));
+    if (Input.GetMouseButtonDown(0) || (leftReset && Input.GetAxis("AllLeftTrigger") > 0.9F))
+    {
+      OnGunTriggered();
+      leftReset = false;
+    }
+
+    if (Input.GetMouseButtonDown(1) || (rightReset && Input.GetAxis("AllRightTrigger") > 0.9F))
+    {
+      OnGunShot();
+      rightReset = false;
+    }
+
+    OnGunRangeChanged(Input.GetAxis("Mouse ScrollWheel") + (Input.GetButtonDown("AllyButton") ? 0.1F : 0) + (Input.GetButtonDown("AllxButton") ? -0.1F : 0));
+
+    if (Input.GetButton("AllyButton")) xHeldTimer += Time.deltaTime;
+    if (Input.GetButton("AllxButton")) yHeldTimer += Time.deltaTime;
+
+    if (xHeldTimer > 0.5)
+      OnGunRangeChanged(0.1F);
+    if (yHeldTimer > 0.5)
+      OnGunRangeChanged(-0.1F);
+
+    if (Input.GetButtonUp("AllyButton")) xHeldTimer = 0;
+    if (Input.GetButtonUp("AllxButton")) yHeldTimer = 0;
   }
 
   private void GetMovement()
@@ -78,8 +101,8 @@ public class PlayerInputManager : MonoBehaviour
   {
     Vector2 cameraDirection = new Vector2
     {
-      x = Input.GetAxis("Mouse X") + Input.GetAxis("AllRightStickX"),
-      y = Input.GetAxis("Mouse Y") + Input.GetAxis("AllRightStickY")
+      x = Input.GetAxis("Mouse X") /*+ Input.GetAxis("AllRightStickX")*/,
+      y = Input.GetAxis("Mouse Y") /*+ Input.GetAxis("AllRightStickY")*/
     };
 
     OnLook(cameraDirection);
@@ -95,13 +118,13 @@ public class PlayerInputManager : MonoBehaviour
 
   private void SelectPlatform()
   {
-    if (Input.GetKeyDown(keys.firstPlatform) || Input.GetAxis("AllDPadY") > 0.5F)
+    if (Input.GetKeyDown(keys.firstPlatform) /*|| Input.GetAxis("AllDPadY") > 0.5F*/)
       OnPlatformOneSelected();
-    if (Input.GetKeyDown(keys.secondPlatform) || Input.GetAxis("AllDPadY") < -0.5F)
+    if (Input.GetKeyDown(keys.secondPlatform) /*|| Input.GetAxis("AllDPadY") < -0.5F*/)
       OnPlatformTwoSelected();
-    if (Input.GetKeyDown(keys.thirdPlatform) || Input.GetAxis("AllDPadX") < -0.5F)
+    if (Input.GetKeyDown(keys.thirdPlatform) /*|| Input.GetAxis("AllDPadX") < -0.5F*/)
       OnPlatformThreeSelected();
-    if (Input.GetKeyDown(keys.fourthPlatform) || Input.GetAxis("AllDPadX") > 0.5F)
+    if (Input.GetKeyDown(keys.fourthPlatform) /*|| Input.GetAxis("AllDPadX") > 0.5F*/)
       OnPlatformFourSelected();
   }
 
