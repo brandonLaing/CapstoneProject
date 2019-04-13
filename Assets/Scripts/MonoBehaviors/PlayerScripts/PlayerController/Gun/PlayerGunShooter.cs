@@ -43,19 +43,22 @@ public class PlayerGunShooter : MonoBehaviour
       return;
     }
 
-    gunTimer = Time.time + gunCooldown;
 
     if (gunState == GunState.PlaceingMovingEndPoint)
     {
       OnGunFired(platformPrefab, gunState, projectionType);
       gunState = GunState.Triggered;
+      gunTimer = Time.time + gunCooldown;
       return;
     }
 
     if (gunState == GunState.Triggered)
     {
       if (projectionType != ProjectionType.MovingPlatform)
+      {
         OnGunFired(platformPrefab, gunState, projectionType);
+        gunTimer = Time.time + gunCooldown;
+      }
       else
       {
         OnGunFired(platformPrefab, gunState, projectionType);
