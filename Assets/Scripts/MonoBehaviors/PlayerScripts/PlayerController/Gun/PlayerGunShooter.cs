@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerGunShooter : MonoBehaviour
 {
+  public bool IsAbleToShoot = true;
+
   public event System.Action<GameObject, GunState, ProjectionType> OnGunFired = delegate { };
   public event System.Action OnGunTriggered = delegate { };
   public event System.Action OnGunStandby = delegate { };
@@ -11,7 +13,6 @@ public class PlayerGunShooter : MonoBehaviour
   private GunState gunState = GunState.Standby;
   private GameObject platformPrefab;
   private ProjectionType projectionType = ProjectionType.Length;
-
   [SerializeField]
   private float gunCooldown = 10; // seconds
   [SerializeField]
@@ -72,17 +73,37 @@ public class PlayerGunShooter : MonoBehaviour
   /// </summary>
   private void ToggleGunTrigger()
   {
-    switch (gunState)
+    //switch (gunState)
+    //{
+    //  case GunState.Standby:
+    //    if (IsAbleToShoot)
+    //    {
+    //      gunState = GunState.Triggered;
+    //      OnGunTriggered();
+    //    }
+    //    break;
+    //  default:
+    //    gunState = GunState.Standby;
+    //    OnGunStandby();
+    //    break;
+    //}
+
+    if (gunState == GunState.Standby)
     {
-      case GunState.Standby:
+      if (IsAbleToShoot)
+      {
         gunState = GunState.Triggered;
         OnGunTriggered();
-        break;
-      default:
-        gunState = GunState.Standby;
-        OnGunStandby();
-        break;
+      }
     }
+    else
+      PutGunToStandby();
+  }
+
+  public void PutGunToStandby()
+  {
+    gunState = GunState.Standby;
+    OnGunStandby();
   }
 
   public event System.Action OnMovingInterupted = delegate { };

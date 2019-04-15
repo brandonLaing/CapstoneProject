@@ -85,6 +85,7 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
     {
       OnEndPointSet -= movingPlatform.GetComponent<PlatformMoving>().AddEndPoint;
       Destroy(movingPlatform);
+      movingPlatform = null;
     }
   }
 
@@ -93,9 +94,13 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
   /// </summary>
   private void PlaceMovingEndPoint()
   {
-    OnNewPlatformCreated(movingPlatform);
-    OnEndPointSet(platformLocation.transform.position);
-    OnEndPointSet -= movingPlatform.GetComponent<PlatformMoving>().AddEndPoint;
+    if (platformLocation != null)
+    {
+      OnNewPlatformCreated(movingPlatform);
+      OnEndPointSet(platformLocation.transform.position);
+      OnEndPointSet -= movingPlatform.GetComponent<PlatformMoving>().AddEndPoint;
+    }
+
     movingPlatform = null;
   }
   #endregion

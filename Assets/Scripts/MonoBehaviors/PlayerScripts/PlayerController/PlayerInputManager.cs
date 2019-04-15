@@ -29,6 +29,13 @@ public class PlayerInputManager : MonoBehaviour
   [SerializeField]
   private KeyHolder keys = new KeyHolder();
 
+  private bool IsUsingController
+  {
+    get
+    {
+      return Input.GetJoystickNames().Length > 0;
+    }
+  }
   private void Update()
   {
     GetGunActions();
@@ -39,37 +46,48 @@ public class PlayerInputManager : MonoBehaviour
     InteractionCheck();
   }
 
-  bool rightReset = true, leftReset = true;
+  bool rightTriggerReset = true, leftTriggerReset = true;
   float xHeldTimer, yHeldTimer;
   private void GetGunActions()
   {
-    if (Input.GetAxis("AllRightTrigger") < 0.2F) rightReset = true;
-    if (Input.GetAxis("AllLeftTrigger") < 0.2F) leftReset = true;
+    if (IsUsingController)
+    {
+      if (Input.GetAxis("AllRightTrigger") < 0.2F) rightTriggerReset = true;
+      if (Input.GetAxis("AllLeftTrigger") < 0.2F) leftTriggerReset = true;
+    }
 
-    if (Input.GetMouseButtonDown(0) || (leftReset && Input.GetAxis("AllLeftTrigger") > 0.9F))
+    if (Input.GetMouseButtonDown(0) || (IsUsingController ? (leftTriggerReset && Input.GetAxis("AllLeftTrigger") > 0.9F) : false))
     {
       OnGunTriggered();
-      leftReset = false;
+      leftTriggerReset = false;
     }
 
-    if (Input.GetMouseButtonDown(1) || (rightReset && Input.GetAxis("AllRightTrigger") > 0.9F))
+    if (Input.GetMouseButtonDown(1) || (IsUsingController ? (rightTriggerReset && Input.GetAxis("AllRightTrigger") > 0.9F) : false))
     {
       OnGunShot();
-      rightReset = false;
+      rightTriggerReset = false;
     }
 
-    OnGunRangeChanged(Input.GetAxis("Mouse ScrollWheel") + (Input.GetButtonDown("AllyButton") ? 0.1F : 0) + (Input.GetButtonDown("AllxButton") ? -0.1F : 0));
+    OnGunRangeChanged(
+      Input.GetAxis("Mouse ScrollWheel") + 
+      (IsUsingController ? (Input.GetButtonDown("AllyButton") ? 0.1F : 0) : 0) + 
+      (IsUsingController ? (Input.GetButtonDown("AllxButton") ? -0.1F : 0): 0)
+      );
 
-    if (Input.GetButton("AllyButton")) xHeldTimer += Time.deltaTime;
-    if (Input.GetButton("AllxButton")) yHeldTimer += Time.deltaTime;
+    if (IsUsingController)
+    {
+      if (Input.GetButton("AllyButton")) xHeldTimer += Time.deltaTime;
+      if (Input.GetButton("AllxButton")) yHeldTimer += Time.deltaTime;
 
-    if (xHeldTimer > 0.5)
-      OnGunRangeChanged(0.1F);
-    if (yHeldTimer > 0.5)
-      OnGunRangeChanged(-0.1F);
+      if (xHeldTimer > 0.5)
+        OnGunRangeChanged(0.1F);
+      if (yHeldTimer > 0.5)
+        OnGunRangeChanged(-0.1F);
 
-    if (Input.GetButtonUp("AllyButton")) xHeldTimer = 0;
-    if (Input.GetButtonUp("AllxButton")) yHeldTimer = 0;
+      if (Input.GetButtonUp("AllyButton")) xHeldTimer = 0;
+      if (Input.GetButtonUp("AllxButton")) yHeldTimer = 0;
+
+    }
   }
 
   private void GetMovement()
@@ -86,14 +104,13 @@ public class PlayerInputManager : MonoBehaviour
       moveDirection += transform.right;
     moveDirection.Normalize();
 
-    float x = Input.GetAxis("AllLeftStickX"), y = Input.GetAxis("AllLeftStickY");
-    moveDirection += (transform.forward * y) + (transform.right * x);
+    if (IsUsingController) moveDirection += (transform.forward * Input.GetAxis("AllLeftStickY")) + (transform.right * Input.GetAxis("AllLeftStickX"));
 
     OnMove(moveDirection);
 
-    if (Input.GetKeyDown(keys.jumpKey) || Input.GetButtonDown("AllaButton"))
+    if (Input.GetKeyDown(keys.jumpKey) || (IsUsingController ? Input.GetButtonDown("AllaButton") : false))
       OnJumpPressed();
-    if (Input.GetKey(keys.jumpKey) || Input.GetButton("AllaButton"))
+    if (Input.GetKey(keys.jumpKey) || (IsUsingController ? Input.GetButton("AllaButton") : false))
       OnJumpHeld();
   }
 
@@ -101,8 +118,8 @@ public class PlayerInputManager : MonoBehaviour
   {
     Vector2 cameraDirection = new Vector2
     {
-      x = Input.GetAxis("Mouse X") + Input.GetAxis("AllRightStickX"),
-      y = Input.GetAxis("Mouse Y") + Input.GetAxis("AllRightStickY")
+      x = Input.GetAxis("Mouse X") + (IsUsingController ? Input.GetAxis("AllRightStickX") : 0),
+      y = Input.GetAxis("Mouse Y") + (IsUsingController ? Input.GetAxis("AllRightStickY") : 0)
     };
 
     OnLook(cameraDirection);
@@ -110,27 +127,48 @@ public class PlayerInputManager : MonoBehaviour
 
   private void CyclePlatforms()
   {
-    if (Input.GetKeyDown(keys.nextPlatform) || Input.GetButtonDown("AllRightBumper"))
+    if (Input.GetKeyDown(keys.nextPlatform) || (IsUsingController ? Input.GetButtonDown("AllRightBumper") : false))
       OnNextPlatform();
-    if (Input.GetKeyDown(keys.previousPlatform) || Input.GetButtonDown("AllLeftBumper"))
+    if (Input.GetKeyDown(keys.previousPlatform) || (IsUsingController ? Input.GetButtonDown("AllLeftBumper") : false))
       OnPreviousPlatform();
   }
 
+  bool upDpadReset = false, downDpadReset = false, leftDpadReset = false, rightDpadRest = false;
   private void SelectPlatform()
   {
-    if (Input.GetKeyDown(keys.firstPlatform) || Input.GetAxis("AllDPadY") > 0.5F)
+    if (IsUsingController)
+    {
+      if (!upDpadReset && Input.GetAxis("AllDPadY") < 0.2F) upDpadReset = true;
+      if (!downDpadReset&& Input.GetAxis("AllDPadY") > -0.2F) downDpadReset = true;
+      if (!leftDpadReset && Input.GetAxis("AllDPadX") < 0.2F) leftDpadReset = true;
+      if (!rightDpadRest && Input.GetAxis("AllDPadX") > -0.2F) rightDpadRest = true;
+    }
+
+    if (Input.GetKeyDown(keys.firstPlatform) || (IsUsingController ? upDpadReset && Input.GetAxis("AllDPadY") > 0.8F : false))
+    {
       OnPlatformOneSelected();
-    if (Input.GetKeyDown(keys.secondPlatform) || Input.GetAxis("AllDPadY") < -0.5F)
+      if (IsUsingController) upDpadReset = false;
+    }
+    if (Input.GetKeyDown(keys.secondPlatform) || (IsUsingController ? downDpadReset && Input.GetAxis("AllDPadY") < -0.8F : false))
+    {
       OnPlatformTwoSelected();
-    if (Input.GetKeyDown(keys.thirdPlatform) || Input.GetAxis("AllDPadX") < -0.5F)
+      if (IsUsingController) downDpadReset = false;
+    }
+    if (Input.GetKeyDown(keys.thirdPlatform) || (IsUsingController ? leftDpadReset && Input.GetAxis("AllDPadX") < -0.8F : false))
+    {
       OnPlatformThreeSelected();
-    if (Input.GetKeyDown(keys.fourthPlatform) || Input.GetAxis("AllDPadX") > 0.5F)
+      if (IsUsingController) leftDpadReset = false;
+    }
+    if (Input.GetKeyDown(keys.fourthPlatform) || (IsUsingController ? rightDpadRest && Input.GetAxis("AllDPadX") > 0.8F : false))
+    {
       OnPlatformFourSelected();
+      if (IsUsingController) rightDpadRest = false;
+    }
   }
 
   private void InteractionCheck()
   {
-    if (Input.GetKeyDown(keys.interact) || Input.GetButtonDown("AllbButton"))
+    if (Input.GetKeyDown(keys.interact) || (IsUsingController ? Input.GetButtonDown("AllbButton"): false))
       OnInteract();
   }
 }
