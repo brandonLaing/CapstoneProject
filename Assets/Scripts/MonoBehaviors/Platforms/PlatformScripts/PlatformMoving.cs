@@ -16,10 +16,12 @@ public class PlatformMoving : MonoBehaviour
 
   private bool moveForward;
   private float swapTimer = 0F;
+  private GameObject platform;
 
   private void Start()
   {
     startPosition = transform.position;
+    platform = transform.GetChild(transform.childCount > 0 ? 0 : -1).gameObject;
   }
 
   public void AddEndPoint(Vector3 endPos)
@@ -72,5 +74,11 @@ public class PlatformMoving : MonoBehaviour
     for (Transform tf = collision.transform; tf != null; tf = tf.parent)
       if (tf.parent == this.transform)
         tf.parent = null;
+  }
+
+  private void OnDestroy()
+  {
+    transform.DetachChildren();
+    Destroy(platform);
   }
 }

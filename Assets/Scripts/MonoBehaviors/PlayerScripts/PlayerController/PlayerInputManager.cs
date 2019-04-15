@@ -101,8 +101,8 @@ public class PlayerInputManager : MonoBehaviour
   {
     Vector2 cameraDirection = new Vector2
     {
-      x = Input.GetAxis("Mouse X") /*+ Input.GetAxis("AllRightStickX")*/,
-      y = Input.GetAxis("Mouse Y") /*+ Input.GetAxis("AllRightStickY")*/
+      x = Input.GetAxis("Mouse X") + Input.GetAxis("AllRightStickX"),
+      y = Input.GetAxis("Mouse Y") + Input.GetAxis("AllRightStickY")
     };
 
     OnLook(cameraDirection);
@@ -118,13 +118,13 @@ public class PlayerInputManager : MonoBehaviour
 
   private void SelectPlatform()
   {
-    if (Input.GetKeyDown(keys.firstPlatform) /*|| Input.GetAxis("AllDPadY") > 0.5F*/)
+    if (Input.GetKeyDown(keys.firstPlatform) || Input.GetAxis("AllDPadY") > 0.5F)
       OnPlatformOneSelected();
-    if (Input.GetKeyDown(keys.secondPlatform) /*|| Input.GetAxis("AllDPadY") < -0.5F*/)
+    if (Input.GetKeyDown(keys.secondPlatform) || Input.GetAxis("AllDPadY") < -0.5F)
       OnPlatformTwoSelected();
-    if (Input.GetKeyDown(keys.thirdPlatform) /*|| Input.GetAxis("AllDPadX") < -0.5F*/)
+    if (Input.GetKeyDown(keys.thirdPlatform) || Input.GetAxis("AllDPadX") < -0.5F)
       OnPlatformThreeSelected();
-    if (Input.GetKeyDown(keys.fourthPlatform) /*|| Input.GetAxis("AllDPadX") > 0.5F*/)
+    if (Input.GetKeyDown(keys.fourthPlatform) || Input.GetAxis("AllDPadX") > 0.5F)
       OnPlatformFourSelected();
   }
 

@@ -3437,6 +3437,26 @@ PrefabInstance:
       propertyPath: _projectionType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4053703982551781187, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
+        type: 3}
+      propertyPath: staticAvailable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053703982551781187, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
+        type: 3}
+      propertyPath: speedAvailable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053703982551781187, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
+        type: 3}
+      propertyPath: movingAvailable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053703982551781187, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
+        type: 3}
+      propertyPath: bounceAvailable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4053703982551781189, guid: 1d0c84ea8498e5b4cb43f1bdcff55331,
         type: 3}
       propertyPath: gunCooldown
