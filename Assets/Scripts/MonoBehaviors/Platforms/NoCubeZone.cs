@@ -6,7 +6,7 @@ public class NoCubeZone : MonoBehaviour
 {
   private bool IsPlayerInside;
   [SerializeField]
-  private bool IsDestroyingPlatforms;
+  private bool IsDestroyingPlatforms = false;
 
   private void OnTriggerEnter(Collider other)
   {
@@ -17,11 +17,8 @@ public class NoCubeZone : MonoBehaviour
       other.GetComponent<PlayerGunShooter>().IsAbleToShoot = false;
     }
 
-    Debug.Log(other.name);
     if (IsDestroyingPlatforms && other.CompareTag("Platform"))
-    {
       Destroy(other.transform.parent.gameObject);
-    }
   }
 
   private void OnTriggerExit(Collider other)

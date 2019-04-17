@@ -14,7 +14,7 @@ public class PlayerGunLocationSetter : MonoBehaviour
   private float scrollMultiplier = 4;
 
   [SerializeField]
-  private Transform projectionLocation;
+  private Transform projectionLocation = null;
 
   public float PlatformRange
   {
@@ -35,15 +35,15 @@ public class PlayerGunLocationSetter : MonoBehaviour
 
   public event System.Action<Vector3, Vector3> OnPlatformLocationChanged = delegate { };
 
-  private void Start() => GetComponent<PlayerInputManager>().OnGunRangeChanged += UpdateRange;
-  private void OnDestroy() => GetComponent<PlayerInputManager>().OnGunRangeChanged -= UpdateRange;
-  private void Update() => UpdatePlatformLocation();
-
+  private void Start() 
+    => GetComponent<PlayerInputManager>().OnGunRangeChanged += UpdateRange;
+  private void OnDestroy() 
+    => GetComponent<PlayerInputManager>().OnGunRangeChanged -= UpdateRange;
+  private void Update() 
+    => UpdatePlatformLocation();
 
   private void UpdateRange(float gunRange)
-  {
-    PlatformRange += (gunRange * scrollMultiplier);
-  }
+    => PlatformRange += (gunRange * scrollMultiplier);
 
   private void UpdatePlatformLocation()
   {

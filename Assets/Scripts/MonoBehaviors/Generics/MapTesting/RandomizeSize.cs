@@ -5,9 +5,9 @@ using UnityEngine;
 public class RandomizeSize : MonoBehaviour
 {
   [SerializeField]
-  private float minSize, maxSize;
+  private float minSize = 2, maxSize = 5;
   [SerializeField]
-  private float minHeight, maxHeight;
+  private float minHeight = 2, maxHeight = 15;
 
   private float RndSize
   {
@@ -30,5 +30,6 @@ public class RandomizeSize : MonoBehaviour
 
     float yScale = transform.position.y * 2;
     transform.localScale = new Vector3(RndSize, yScale, RndSize);
+
   }
 }

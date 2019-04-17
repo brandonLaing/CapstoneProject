@@ -20,14 +20,16 @@ public class Level2Animation : MonoBehaviour
 
     void Start()
     {
-        platforms = new List<GameObject>();
-        platforms.Add(platform1);
-        platforms.Add(platform2);
-        platforms.Add(platform3);
-        platforms.Add(platform4);
-        platforms.Add(platform5);
-        platforms.Add(platform6);
-        StartCoroutine("PlatformAnimation");
+    platforms = new List<GameObject>
+    {
+      platform1,
+      platform2,
+      platform3,
+      platform4,
+      platform5,
+      platform6
+    };
+    StartCoroutine("PlatformAnimation");
     }
 
     private IEnumerator PlatformAnimation()

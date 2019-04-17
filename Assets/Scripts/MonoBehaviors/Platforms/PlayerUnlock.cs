@@ -15,8 +15,6 @@ public class PlayerUnlock : MonoBehaviour
   {
     if (other.tag == "Player")
     {
-      Debug.Log("Shit");
-    
       PlayerGunPlatformSelector selector = other.GetComponent<PlayerGunPlatformSelector>();
 
       if (changesPrefab)
