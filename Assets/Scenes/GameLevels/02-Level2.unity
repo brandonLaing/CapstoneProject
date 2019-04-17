@@ -119,7 +119,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-29214
+  m_Name: pb_Mesh-14942
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -25756,6 +25756,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 878584585}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!43 &311849760
@@ -26011,6 +26021,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4090658}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!1001 &388308520
@@ -53932,7 +53952,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-29328
+  m_Name: pb_Mesh-15064
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -54354,16 +54374,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTileManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: tileCorrectState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: nextTile
-      value: 
-      objectReference: {fileID: 1679729581}
     - target: {fileID: 5341950617061942729, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: doorsToEffect.Array.data[0]
@@ -54479,6 +54489,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 34.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: tileCorrectState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1679729581}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdb44600408915c47a118fd735c8841b, type: 3}
 --- !u!4 &1395716031 stripped

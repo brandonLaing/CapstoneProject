@@ -366,6 +366,16 @@ PrefabInstance:
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 1981162096}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &57934666 stripped
@@ -954,6 +964,16 @@ PrefabInstance:
     - target: {fileID: 1612737768, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: otherTileToRotate
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
@@ -1695,11 +1715,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTileManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: nextTile
-      value: 
-      objectReference: {fileID: 1971270286}
     - target: {fileID: 5341950617061942729, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: doorsToEffect.Array.data[0]
@@ -1860,10 +1875,25 @@ PrefabInstance:
       propertyPath: puzzleTiles.Array.data[0]
       value: 
       objectReference: {fileID: 1971270286}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1971270286}
     - target: {fileID: 5341950618207730289, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: otherTileToRotate
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418359089900752, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418360251779483, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdb44600408915c47a118fd735c8841b, type: 3}
@@ -39630,6 +39660,16 @@ PrefabInstance:
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 1979757692}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &1291934719 stripped
@@ -40292,6 +40332,16 @@ PrefabInstance:
     - target: {fileID: 1612737768, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: otherTileToRotate
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
@@ -79409,6 +79459,16 @@ PrefabInstance:
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 1981162096}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &1971270286 stripped
@@ -79516,6 +79576,16 @@ PrefabInstance:
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 1291934720}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &1979757691 stripped
@@ -79625,6 +79695,16 @@ PrefabInstance:
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 57934667}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &1981162095 stripped
@@ -81389,6 +81469,16 @@ PrefabInstance:
     - target: {fileID: 1612737768, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: otherTileToRotate
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}

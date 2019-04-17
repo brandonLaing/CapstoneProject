@@ -32786,6 +32786,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1981903237}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!43 &825765851
@@ -71372,21 +71382,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTileManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: tileStartState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: tileCorrectState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: nextTile
-      value: 
-      objectReference: {fileID: 2072581781}
     - target: {fileID: 5341950617061942729, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: doorsToEffect.Array.data[0]
@@ -71497,11 +71492,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9159418360538821880, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_Name
-      value: Center
-      objectReference: {fileID: 0}
     - target: {fileID: 5341950617061942734, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: puzzleTiles.Array.size
@@ -71522,6 +71512,36 @@ PrefabInstance:
       propertyPath: puzzleTiles.Array.data[3]
       value: 
       objectReference: {fileID: 2072581781}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: tileStartState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: tileCorrectState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 2072581781}
+    - target: {fileID: 9159418360538821880, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_Name
+      value: Center
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418359089900752, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418360251779483, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdb44600408915c47a118fd735c8841b, type: 3}
 --- !u!4 &1406866161 stripped
@@ -71613,6 +71633,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 217085205}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!43 &1602639323
@@ -74584,6 +74614,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 727476781}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &2072581781 stripped

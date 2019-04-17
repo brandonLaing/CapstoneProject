@@ -6503,11 +6503,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTileManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: nextTile
-      value: 
-      objectReference: {fileID: 1163847735}
     - target: {fileID: 5341950617061942729, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: doorsToEffect.Array.data[0]
@@ -6618,6 +6613,21 @@ PrefabInstance:
       propertyPath: puzzleTiles.Array.data[4]
       value: 
       objectReference: {fileID: 835962380}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1163847735}
+    - target: {fileID: 9159418359089900752, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418360251779483, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdb44600408915c47a118fd735c8841b, type: 3}
 --- !u!4 &51351289 stripped
@@ -7228,6 +7238,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 576667683}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &107488079 stripped
@@ -36759,6 +36779,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1787022427}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &199055026 stripped
@@ -69022,6 +69052,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1479428887}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &835962380 stripped
@@ -69998,6 +70038,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1933379658}
+    - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836681713647148802, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &1163847735 stripped
