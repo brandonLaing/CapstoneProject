@@ -6618,6 +6618,16 @@ PrefabInstance:
       propertyPath: nextTile
       value: 
       objectReference: {fileID: 1163847735}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: tileStartState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: tileCorrectState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9159418359089900752, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: m_Enabled
@@ -7163,7 +7173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: tileStartState
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: previousTiles.Array.data[0]
@@ -7173,6 +7183,10 @@ PrefabInstance:
       propertyPath: nextTile
       value: 
       objectReference: {fileID: 835962380}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -36704,7 +36718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: tileStartState
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: previousTiles.Array.data[0]
@@ -36714,6 +36728,10 @@ PrefabInstance:
       propertyPath: nextTile
       value: 
       objectReference: {fileID: 107488079}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -68981,12 +68999,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: tileStartState
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: previousTiles.Array.data[0]
       value: 
       objectReference: {fileID: 107488079}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -69242,7 +69264,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-18932
+  m_Name: pb_Mesh-29840
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -69963,7 +69985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: tileStartState
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: previousTiles.Array.data[0]
@@ -69973,6 +69995,10 @@ PrefabInstance:
       propertyPath: nextTile
       value: 
       objectReference: {fileID: 199055026}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalScale.y

@@ -29681,7 +29681,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-16610
+  m_Name: pb_Mesh-28522
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -32721,6 +32721,10 @@ PrefabInstance:
       propertyPath: nextTile
       value: 
       objectReference: {fileID: 2072581781}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -71527,11 +71531,6 @@ PrefabInstance:
       propertyPath: nextTile
       value: 
       objectReference: {fileID: 2072581781}
-    - target: {fileID: 9159418360538821880, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_Name
-      value: Center
-      objectReference: {fileID: 0}
     - target: {fileID: 9159418359089900752, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: m_Enabled
@@ -71541,6 +71540,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159418360538821880, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_Name
+      value: Center
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdb44600408915c47a118fd735c8841b, type: 3}
@@ -71568,7 +71572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: tileStartState
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: previousTiles.Array.data[0]
@@ -71578,6 +71582,10 @@ PrefabInstance:
       propertyPath: nextTile
       value: 
       objectReference: {fileID: 2072581781}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalRotation.x
