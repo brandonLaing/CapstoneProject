@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -8,15 +9,45 @@ public class PauseMenuController : MonoBehaviour
   private PlayerInputManager inputMan;
   [SerializeField]
   private GameObject pauseCanvas;
+  [SerializeField]
+  private bool IsPaused = false;
 
   private void Awake()
   {
     inputMan.OnStartPressedDown += TogglePause;
+    Debug.Log($"Time scale: {Time.timeScale}");
   }
 
   private void TogglePause()
   {
-    pauseCanvas.SetActive(!pauseCanvas.activeSelf);
+    Debug.Log("Hello");
+
+    if (IsPaused) UnpauseGame();
+    else PauseGame();
+  }
+
+  private void PauseGame()
+  {
+    Debug.Log("Pausing game");
+    Time.timeScale = 0;
+    pauseCanvas.SetActive(true);
+    IsPaused = true;
+    Cursor.lockState = CursorLockMode.Confined;
+  }
+
+  private void UnpauseGame()
+  {
+    Debug.Log("Unpausing");
+
+    Time.timeScale = 1;
+    pauseCanvas.SetActive(false);
+    Cursor.lockState = CursorLockMode.Locked;
+    IsPaused = false;
+  }
+
+  public void _LoadLevel(string sceneName)
+  {
+    SceneManager.LoadScene(sceneName);
   }
 
   private void OnDestroy()
