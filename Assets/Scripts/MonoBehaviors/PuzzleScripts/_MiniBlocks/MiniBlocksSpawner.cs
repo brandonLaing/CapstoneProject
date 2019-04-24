@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MiniBlocksSpawner : MonoBehaviour, IActivateable
 {
-  public Transform cubesHolder;
-
   public Transform spawnPosition;
   public Vector2 spawnRangeMin;
   public Vector2 spawnRangeMax;
@@ -30,8 +28,8 @@ public class MiniBlocksSpawner : MonoBehaviour, IActivateable
       GameObject newCube =
         Instantiate(cubePrefab,
         spawnPosition.position + new Vector3(transform.right.x * Random.Range(spawnRangeMin.x, spawnRangeMax.x), 0, transform.up.y * Random.Range(spawnRangeMin.y, spawnRangeMax.y)),
-        Quaternion.identity,
-        cubesHolder);
+        Quaternion.identity
+        );
 
       newCube.GetComponent<Rigidbody>().AddForce(spawnPosition.up * spawnForce);
 

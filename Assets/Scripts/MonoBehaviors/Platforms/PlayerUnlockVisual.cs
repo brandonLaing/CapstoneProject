@@ -14,9 +14,9 @@ public class PlayerUnlockVisual : MonoBehaviour
   private float minBounce = -2, maxBounce = 2;
   private bool IsBouncingUp = true;
   [SerializeField]
-  private Mesh cubeMesh;
+  private Mesh cubeMesh = null;
   [SerializeField]
-  private Material projectionMat;
+  private Material projectionMat = null;
 
   private void Start()
   {
