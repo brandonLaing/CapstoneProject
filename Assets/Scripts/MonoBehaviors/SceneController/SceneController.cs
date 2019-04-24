@@ -12,6 +12,9 @@ public class SceneController : MonoBehaviour
   public GameObject entranceDoor;
   public GameObject collisionChecker;
 
+  [SerializeField]
+  private bool IsLoadingAdditive = true;
+
   private void Start()
   {
     if (previousScene == string.Empty)
@@ -133,7 +136,7 @@ public class SceneController : MonoBehaviour
   /// <returns></returns>
   private IEnumerator LoadSceneAsync()
   {
-    AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
+    AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextScene, IsLoadingAdditive ? LoadSceneMode.Additive : LoadSceneMode.Single);
 
     while (!asyncLoad.isDone)
     {
