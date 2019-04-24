@@ -26,6 +26,8 @@ public class PlayerInputManager : MonoBehaviour
 
   public event Action OnInteract = delegate { };
 
+  public event Action OnStartPressedDown = delegate { };
+
   [SerializeField]
   private KeyHolder keys = new KeyHolder();
 
@@ -44,6 +46,9 @@ public class PlayerInputManager : MonoBehaviour
     CyclePlatforms();
     SelectPlatform();
     InteractionCheck();
+
+    if (Input.GetKeyDown(keys.start) || Input.GetButtonDown("AllStartButton"))
+      OnStartPressedDown();
   }
 
   bool rightTriggerReset = true, leftTriggerReset = true;
@@ -192,4 +197,5 @@ public class KeyHolder
   public KeyCode fourthPlatform = KeyCode.Alpha4;
 
   public KeyCode interact = KeyCode.F;
+  public KeyCode start = KeyCode.Escape;
 }
