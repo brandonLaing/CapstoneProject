@@ -107,7 +107,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.75
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a893f4db6f149464590cda5da9e44edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpVelocity: 5
+  jumpVelocity: 6.5
 --- !u!114 &4053703982551781180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,10 +280,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd16c15fdf2ff94bba034b31b40f997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staticAvailable: 1
-  movingAvailable: 1
-  speedAvailable: 1
-  bounceAvailable: 1
+  staticAvailable: 0
+  movingAvailable: 0
+  speedAvailable: 0
+  bounceAvailable: 0
   staticPrefab: {fileID: 6466308379375005817, guid: d9f8cc4e4f6273c4d9af5e294f865230,
     type: 3}
   movingPrefab: {fileID: 7342308952159102205, guid: 938f7bffa2600864b871bacecd40cc51,
@@ -310,8 +310,9 @@ MonoBehaviour:
     m_Bits: 3895
   minPlatformRange: 4
   maxPlatformRange: 20
-  _platformRange: 0
+  _platformRange: 5
   scrollMultiplier: 10
+  projectionLocation: {fileID: 2681211411496417374}
 --- !u!114 &4053703982551781188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,6 +338,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20ff21c1115c8944b0ec08f09d8cda7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsAbleToShoot: 1
+  gunCooldown: 1
+  gunTimer: 0
 --- !u!114 &4053703982551781186
 MonoBehaviour:
   m_ObjectHideFlags: 0

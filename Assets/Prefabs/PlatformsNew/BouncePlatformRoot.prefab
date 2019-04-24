@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025b71c59ff64fe4d85b8e48770fec0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 10
+  bounceForce: 20
   testCubePrefab: {fileID: 0}
 --- !u!1001 &6576880676037481996
 PrefabInstance:

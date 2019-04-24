@@ -2,48 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System;
 
-[CanEditMultipleObjects]
 [CustomEditor(typeof(PlayerUnlock))]
 public class PlayerUnlockEditor : Editor
 {
+  private readonly bool editorFuckingUp = true;
+
   public override void OnInspectorGUI()
   {
-    PlayerUnlock scriptTarget = target as PlayerUnlock;
-    scriptTarget.unlockType = (ProjectionType)EditorGUILayout.EnumPopup(
-      new GUIContent("Platform type", "The type of platform that will be effected"),
-      scriptTarget.unlockType
+    if (editorFuckingUp)
+    {
+      DrawDefaultInspector();
+      return;
+    }
+
+    PlayerUnlock _target = target as PlayerUnlock;
+
+    BuildBaseElements(_target);
+    if (_target.unlockState)
+      BuildSwap(_target);
+  }
+
+  private void BuildSwap(PlayerUnlock target)
+  {
+    EditorGUI.indentLevel++;
+    target.changesPrefab = EditorGUILayout.ToggleLeft(
+      new GUIContent("Changes prefab"),
+      target.changesPrefab
       );
-
-    if (scriptTarget.unlockType == ProjectionType.Length)
-      scriptTarget.unlockType = ProjectionType.StaticPlatform;
-
-    scriptTarget.destroyOnEnter = EditorGUILayout.Toggle(
-      new GUIContent("Destory on enter", "Will destory the cube on a players entry"),
-      scriptTarget.destroyOnEnter
-      );
-
-    scriptTarget.unlockState = EditorGUILayout.Toggle(
-      new GUIContent(),
-      scriptTarget.unlockState
-      );
-
-    scriptTarget.changesPrefab = EditorGUILayout.ToggleLeft(
-      new GUIContent(),
-      scriptTarget.changesPrefab
-      );
-
-    if (scriptTarget.changesPrefab)
+    if (target.changesPrefab)
     {
       EditorGUI.indentLevel++;
-      scriptTarget.newPrefab = (GameObject)EditorGUILayout.ObjectField(
-        new GUIContent(),
-        scriptTarget.newPrefab,
+      target.newPrefab = (GameObject)EditorGUILayout.ObjectField(
+        new GUIContent("New Prefab", "This prefab swaps out for your old one"),
+        target.newPrefab,
         typeof(GameObject),
         false
         );
       EditorGUI.indentLevel--;
     }
+    EditorGUI.indentLevel--;
+  }
 
+  private void BuildBaseElements(PlayerUnlock target)
+  {
+    target.unlockType = (ProjectionType)EditorGUILayout.EnumPopup(
+      new GUIContent("Platform to effect"),
+      target.unlockType
+      );
+
+    target.destroyOnEnter = EditorGUILayout.ToggleLeft(
+      new GUIContent("Destroy after interaction"),
+      target.destroyOnEnter
+      );
+
+    target.unlockState = EditorGUILayout.ToggleLeft(
+      new GUIContent("Unlock/Lock", "True unlocks False locks"),
+      target.unlockState
+  );
   }
 }
