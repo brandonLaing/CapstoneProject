@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5068,11 +5068,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewUpgradeTriggerRoot
       objectReference: {fileID: 0}
-    - target: {fileID: 2580720073641091342, guid: 59e4bb4057b031c40b7529522c65a2e8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 2580720073641091343, guid: 59e4bb4057b031c40b7529522c65a2e8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5128,62 +5123,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2580720073641091328, guid: 59e4bb4057b031c40b7529522c65a2e8,
-        type: 3}
-      propertyPath: newPrefab
-      value: 
-      objectReference: {fileID: 3779438612549460023, guid: 2f11e89992c27064fa93074afc2d78c7,
-        type: 3}
-    - target: {fileID: 2580720073641091328, guid: 59e4bb4057b031c40b7529522c65a2e8,
-        type: 3}
-      propertyPath: unlockState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2580720073641091328, guid: 59e4bb4057b031c40b7529522c65a2e8,
-        type: 3}
-      propertyPath: unlockType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2580720073641091328, guid: 59e4bb4057b031c40b7529522c65a2e8,
-        type: 3}
-      propertyPath: changesPrefab
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2580720073651922066, guid: 59e4bb4057b031c40b7529522c65a2e8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2580720073594158809, guid: 59e4bb4057b031c40b7529522c65a2e8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7364515032703926353, guid: 59e4bb4057b031c40b7529522c65a2e8,
-        type: 3}
-      propertyPath: cubeMesh
-      value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-    - target: {fileID: 7364515032703926353, guid: 59e4bb4057b031c40b7529522c65a2e8,
-        type: 3}
-      propertyPath: minBounce
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7364515032703926353, guid: 59e4bb4057b031c40b7529522c65a2e8,
-        type: 3}
-      propertyPath: maxBounce
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7364515032703926353, guid: 59e4bb4057b031c40b7529522c65a2e8,
-        type: 3}
-      propertyPath: rotationSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7364515032703926353, guid: 59e4bb4057b031c40b7529522c65a2e8,
-        type: 3}
-      propertyPath: projectionMat
-      value: 
-      objectReference: {fileID: 2100000, guid: 5d763851b92fae74d947d5f2371a1675, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59e4bb4057b031c40b7529522c65a2e8, type: 3}
 --- !u!114 &9194272414800525570

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2580720073594158810}
   - component: {fileID: 7364515032703926353}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,6 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aba8496ce302a344a06b74a780b2d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 20
+  bounceSpeed: 2
+  minBounce: -0.5
+  maxBounce: 0.5
+  cubeMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  projectionMat: {fileID: 2100000, guid: 5d763851b92fae74d947d5f2371a1675, type: 2}
 --- !u!1 &2580720073641091342
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,7 +60,7 @@ GameObject:
   - component: {fileID: 2580720073641091343}
   - component: {fileID: 2580720073641091328}
   - component: {fileID: 2580720073641091329}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: NewUpgradeTriggerRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,11 +95,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ea375162ab6154da2c26df82c4601b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlockType: 0
+  unlockType: 2
   destroyOnEnter: 0
-  unlockState: 0
-  changesPrefab: 0
-  newPrefab: {fileID: 0}
+  unlockState: 1
+  changesPrefab: 1
+  newPrefab: {fileID: 3779438612549460023, guid: 2f11e89992c27064fa93074afc2d78c7,
+    type: 3}
 --- !u!54 &2580720073641091329
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -120,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2580720073651922067}
   - component: {fileID: 2580720073651922068}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
