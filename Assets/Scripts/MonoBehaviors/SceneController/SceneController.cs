@@ -11,6 +11,7 @@ public class SceneController : MonoBehaviour
 
   public GameObject entranceDoor;
   public GameObject collisionChecker;
+  public bool IsEnding;
 
   [SerializeField]
   private bool IsLoadingAdditive = true;
@@ -105,8 +106,15 @@ public class SceneController : MonoBehaviour
   {
     if (other.CompareTag("Player"))
     {
-      collisionChecker.SetActive(false);
-      MovePlayerOver();
+      if (IsEnding)
+      {
+        SceneManager.LoadScene(nextScene);
+      }
+      else
+      {
+        collisionChecker.SetActive(false);
+        MovePlayerOver();
+      }
     }
   }
 
