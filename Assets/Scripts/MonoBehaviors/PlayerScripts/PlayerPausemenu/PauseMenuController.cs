@@ -20,9 +20,7 @@ public class PauseMenuController : MonoBehaviour
 
   private void TogglePause()
   {
-    Debug.Log("Hello");
-
-    if (IsPaused) UnpauseGame();
+    if (IsPaused) _UnpauseGame();
     else PauseGame();
   }
 
@@ -35,7 +33,7 @@ public class PauseMenuController : MonoBehaviour
     Cursor.lockState = CursorLockMode.Confined;
   }
 
-  private void UnpauseGame()
+  public void _UnpauseGame()
   {
     Debug.Log("Unpausing");
 
