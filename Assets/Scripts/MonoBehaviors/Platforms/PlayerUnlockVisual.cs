@@ -21,6 +21,7 @@ public class PlayerUnlockVisual : MonoBehaviour
   private void Start()
   {
     visual = new GameObject("Fake", typeof(MeshFilter), typeof(MeshRenderer));
+    visual.transform.parent = this.transform;
     visual.GetComponent<MeshFilter>().mesh = cubeMesh;
 
     GameObject tempHolder = Instantiate(GetComponentInParent<PlayerUnlock>().newPrefab);

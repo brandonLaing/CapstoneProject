@@ -159,10 +159,10 @@ MonoBehaviour:
   - {fileID: 3836681712661559880}
   - {fileID: 3836681713647148813}
   flowRenderer: []
-  successMat: {fileID: 2100000, guid: 48c84e6ad3c5a5b479f156feaa05d9ff, type: 2}
-  failMat: {fileID: 2100000, guid: d91612d0a5ee5b7468a59fc49e2ec7b1, type: 2}
-  flowOff: {fileID: 0}
-  flowOn: {fileID: 0}
+  successMat: {fileID: 2100000, guid: d49f01a068019aa4e9fd26c754e23f89, type: 2}
+  failMat: {fileID: 2100000, guid: c4a8ae06ad232674694e51093ce5147d, type: 2}
+  flowOff: {fileID: 2100000, guid: c4a8ae06ad232674694e51093ce5147d, type: 2}
+  flowOn: {fileID: 2100000, guid: d49f01a068019aa4e9fd26c754e23f89, type: 2}
 --- !u!114 &1612737767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +343,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ebf8b4d16b7f8924fb9116d2e3207836, type: 2}
+  - {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
