@@ -21,4 +21,10 @@ public class PlayerSingleton : MonoBehaviour
       Destroy(this.gameObject);
     }
   }
+
+  private void OnDestroy()
+  {
+    if (this == main)
+      main = null;
+  }
 }

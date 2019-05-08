@@ -13,8 +13,10 @@ public class PlayerUnlock : MonoBehaviour
 
   private void OnTriggerEnter(Collider other)
   {
+    Debug.Log("Hit something");
     if (other.tag == "Player")
     {
+      Debug.Log("Other is player");
       PlayerGunPlatformSelector selector = other.GetComponent<PlayerGunPlatformSelector>();
 
       if (changesPrefab)

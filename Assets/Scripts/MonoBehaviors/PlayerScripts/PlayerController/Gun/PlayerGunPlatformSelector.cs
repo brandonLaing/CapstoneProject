@@ -153,15 +153,19 @@ public class PlayerGunPlatformSelector : MonoBehaviour
     {
       case ProjectionType.StaticPlatform:
         staticPrefab = prefab;
+        staticAvailable = true;
         break;
       case ProjectionType.MovingPlatform:
         movingPrefab = prefab;
+        movingAvailable = true;
         break;
       case ProjectionType.SpeedPlatform:
         speedPrefab = prefab;
+        speedAvailable = true;
         break;
       case ProjectionType.BouncePlatform:
         bouncePrefab = prefab;
+        bounceAvailable = true;
         break;
     }
   }
