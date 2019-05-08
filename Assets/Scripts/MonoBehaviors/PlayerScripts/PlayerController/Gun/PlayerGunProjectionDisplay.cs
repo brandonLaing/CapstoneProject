@@ -23,9 +23,9 @@ public class PlayerGunProjectionDisplay : MonoBehaviour
   private void ChangeDisplay(GameObject platformPrefab, ProjectionType _projectionType)
   {
     projectionLocation.transform.localScale = platformPrefab.transform.GetChild(0).localScale;
-    Color _matColor = platformPrefab.GetComponentInChildren<MeshRenderer>().sharedMaterial.color;
-    _matColor.a = 0.5F;
-    projectionLocation.GetComponent<MeshRenderer>().material.color = _matColor;
+    Material _matColor = platformPrefab.GetComponentInChildren<MeshRenderer>().sharedMaterial;
+        //_matColor.color = new Color(_matColor.color.r, _matColor.color.g, _matColor.color.b, 0.5F);
+    projectionLocation.GetComponent<MeshRenderer>().material = _matColor;
   }
 
   private void ShowProjection()
