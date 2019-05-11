@@ -4,7 +4,7 @@ using UnityEngine;
 /// @author Brandon Laing
 
 /// <summary>
-/// Controls each indivdual wall tile
+/// Controls each individual wall tile
 /// </summary>
 public class WallTileRotator : MonoBehaviour
 {
@@ -40,6 +40,9 @@ public class WallTileRotator : MonoBehaviour
   public Transform arrows;
 
   private WallTileSuccessTracker successTracker;
+
+  [SerializeField]
+  private AudioSource rotatorSound;
   #endregion
 
   #region Properties
@@ -108,7 +111,7 @@ public class WallTileRotator : MonoBehaviour
 
 
   /// <summary>
-  /// When the tile is interected with it increments the walls state
+  /// When the tile is intersected with it increments the walls state
   /// </summary>
   public void IncrementState()
   {
@@ -142,12 +145,13 @@ public class WallTileRotator : MonoBehaviour
   }
 
   /// <summary>
-  /// Rotates the tile untill its gets within an exceptable range then snaps the tile to its target range
+  /// Rotates the tile until its gets within an expectable range then snaps the tile to its target range
   /// </summary>
   /// <returns></returns>
   private IEnumerator RotateTile()
   {
     rotating = true;
+    rotatorSound.Play();
 
     while (TargetRotation.z > arrows.transform.localRotation.eulerAngles.z + deadSpace || TargetRotation.z < arrows.transform.localRotation.eulerAngles.z - deadSpace)
     {
@@ -157,6 +161,7 @@ public class WallTileRotator : MonoBehaviour
 
     arrows.transform.localRotation = Quaternion.Euler(TargetRotation);
     successTracker.CheckForCorrectState();
+    rotatorSound.Stop();
 
     rotating = false;
   }

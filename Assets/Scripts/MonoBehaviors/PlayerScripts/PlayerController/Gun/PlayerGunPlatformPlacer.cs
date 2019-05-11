@@ -11,6 +11,9 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
   public GameObject movingPlatform;
 
   public Transform platformLocation;
+
+  [SerializeField]
+  private AudioSource shootSound;
   #endregion
 
   #region Unity Events
@@ -66,6 +69,7 @@ public class PlayerGunPlatformPlacer : MonoBehaviour
 
     GameObject newPlatform = Instantiate(platformPrefab, platformLocation.position, platformLocation.rotation);
     newPlatform.name += ("(Clone)");
+    shootSound.Play();
 
     if (platformType == ProjectionType.MovingPlatform)
     {

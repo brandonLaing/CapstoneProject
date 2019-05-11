@@ -30,6 +30,9 @@ public class WallTileSuccessTracker : MonoBehaviour
 
   private WallTileRotator rotator;
   private WallTileColorChanger colorChanger;
+
+  [SerializeField]
+  private AudioSource successSound;
   #endregion
 
   #region Properties
@@ -86,6 +89,7 @@ public class WallTileSuccessTracker : MonoBehaviour
       if (previousTiles.Count == 0)
       {
         CheckPassed = true;
+        successSound.Play();
         return;
       }
 
@@ -103,6 +107,7 @@ public class WallTileSuccessTracker : MonoBehaviour
       }
 
       CheckPassed = true;
+      successSound.Play();
     }
     else
       CheckPassed = false;
