@@ -10,12 +10,15 @@ public class PauseMenuController : MonoBehaviour
   [SerializeField]
   private GameObject pauseCanvas;
   [SerializeField]
+  private GameObject levelSelect;
+  [SerializeField]
+  private GameObject pauseMenu;
+  [SerializeField]
   private bool IsPaused = false;
 
   private void Awake()
   {
     inputMan.OnStartPressedDown += TogglePause;
-    Debug.Log($"Time scale: {Time.timeScale}");
   }
 
   private void TogglePause()
@@ -26,6 +29,9 @@ public class PauseMenuController : MonoBehaviour
 
   private void PauseGame()
   {
+    pauseMenu.SetActive(true);
+    levelSelect.SetActive(false);
+
     Debug.Log("Pausing game");
     Time.timeScale = 0;
     pauseCanvas.SetActive(true);
