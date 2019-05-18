@@ -10,22 +10,14 @@ public class MiainMenuButtons : MonoBehaviour {
         Cursor.visible = true;
     }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("aButton"))
-        {
-            PlayButton();
-        }
-    }
-
     public void PlayButton()
     {
-        SceneManager.LoadSceneAsync("03_Level01_JD");
+        SceneManager.LoadSceneAsync("01-Level1");
     }
 
     public void CreditsButton()
     {
-        SceneManager.LoadSceneAsync("02_Credits");
+        SceneManager.LoadSceneAsync("Credits");
     }
 
     public void QuitButton()
