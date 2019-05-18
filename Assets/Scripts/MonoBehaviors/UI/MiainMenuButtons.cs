@@ -13,6 +13,12 @@ public class MiainMenuButtons : MonoBehaviour {
         Cursor.visible = true;
     }
 
+    private void Awake()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     private void Update()
     {
         if (controlsVisible == true)
