@@ -55,8 +55,8 @@ LightmapSettings:
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 10
-    m_Resolution: 0.25
-    m_BakeResolution: 5
+    m_Resolution: 2
+    m_BakeResolution: 40
     m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
@@ -18996,30 +18996,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileStartState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCorrectState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTile
+    - target: {fileID: 3836681713872721325, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1582223716}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: nextTile
+      objectReference: {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
+    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 750286303}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[0]
+      objectReference: {fileID: 1588760905}
+    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 740822478}
+      objectReference: {fileID: 1588760905}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19075,16 +19066,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileStartState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTile
       value: 
-      objectReference: {fileID: 1588760905}
-    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+      objectReference: {fileID: 1582223716}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: nextTile
       value: 
-      objectReference: {fileID: 1588760905}
+      objectReference: {fileID: 750286303}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 740822478}
     - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_Enabled
@@ -19099,11 +19104,6 @@ PrefabInstance:
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 1317073475}
-    - target: {fileID: 3836681713872721325, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!1001 &633893507
@@ -19397,26 +19397,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileStartState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCorrectState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: nextTile
+    - target: {fileID: 3836681713872721325, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 802014270}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[0]
+      objectReference: {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
+    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1582223716}
+      objectReference: {fileID: 1630281991}
+    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1630281991}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19472,16 +19467,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileStartState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: nextTile
       value: 
-      objectReference: {fileID: 1630281991}
-    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+      objectReference: {fileID: 802014270}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[0]
       value: 
-      objectReference: {fileID: 1630281991}
+      objectReference: {fileID: 1582223716}
     - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_Enabled
@@ -19492,19 +19497,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737767, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCurrentState
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1612737768, guid: d2acba4945af9754a8c740a32894f250, type: 3}
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 1228573019}
-    - target: {fileID: 3836681713872721325, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
+    - target: {fileID: 1612737767, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCurrentState
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &740822478 stripped
@@ -19543,30 +19543,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chain Hub
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileStartState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCorrectState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTile
+    - target: {fileID: 3836681713872721325, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1728840188}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[0]
+      objectReference: {fileID: 2100000, guid: ebf8b4d16b7f8924fb9116d2e3207836, type: 2}
+    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 802014270}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[1]
+      objectReference: {fileID: 1050529240}
+    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1317073473}
+      objectReference: {fileID: 1050529240}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19632,16 +19623,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileStartState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTile
       value: 
-      objectReference: {fileID: 1050529240}
-    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+      objectReference: {fileID: 1728840188}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[0]
       value: 
-      objectReference: {fileID: 1050529240}
+      objectReference: {fileID: 802014270}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 1317073473}
     - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_Enabled
@@ -19656,11 +19661,6 @@ PrefabInstance:
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721325, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ebf8b4d16b7f8924fb9116d2e3207836, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &750286303 stripped
@@ -20659,22 +20659,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileStartState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCorrectState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTile
+    - target: {fileID: 3836681713872721325, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 802014270}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: nextTile
+      objectReference: {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
+    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1728840188}
+      objectReference: {fileID: 539495915}
+    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 539495915}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20730,16 +20729,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileStartState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTile
       value: 
-      objectReference: {fileID: 539495915}
-    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+      objectReference: {fileID: 802014270}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: nextTile
       value: 
-      objectReference: {fileID: 539495915}
+      objectReference: {fileID: 1728840188}
     - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_Enabled
@@ -20754,11 +20759,6 @@ PrefabInstance:
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 1692008639}
-    - target: {fileID: 3836681713872721325, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &870531313 stripped
@@ -21767,30 +21767,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileStartState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCorrectState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTile
+    - target: {fileID: 3836681713872721325, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 748319608}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: nextTile
+      objectReference: {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
+    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1317073473}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[0]
+      objectReference: {fileID: 1871304292}
+    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 748319608}
+      objectReference: {fileID: 1871304292}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21846,16 +21837,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileStartState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTile
       value: 
-      objectReference: {fileID: 1871304292}
-    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+      objectReference: {fileID: 748319608}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: nextTile
       value: 
-      objectReference: {fileID: 1871304292}
+      objectReference: {fileID: 1317073473}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 748319608}
     - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_Enabled
@@ -21870,11 +21875,6 @@ PrefabInstance:
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 774002925}
-    - target: {fileID: 3836681713872721325, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!114 &1228573019 stripped
@@ -22765,30 +22765,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileStartState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCorrectState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTile
+    - target: {fileID: 3836681713872721325, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1728840188}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[0]
+      objectReference: {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
+    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1728840188}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: nextTile
+      objectReference: {fileID: 2079729874}
+    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 750286303}
+      objectReference: {fileID: 2079729874}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22844,16 +22835,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileStartState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTile
       value: 
-      objectReference: {fileID: 2079729874}
-    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+      objectReference: {fileID: 1728840188}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[0]
       value: 
-      objectReference: {fileID: 2079729874}
+      objectReference: {fileID: 1728840188}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 750286303}
     - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_Enabled
@@ -22868,11 +22873,6 @@ PrefabInstance:
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 728322886}
-    - target: {fileID: 3836681713872721325, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2acba4945af9754a8c740a32894f250, type: 3}
 --- !u!1 &1506603045
@@ -41949,6 +41949,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 35.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9159418360022008628, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
+    - target: {fileID: 9159418360538821880, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_Name
+      value: Left 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: previousTile
@@ -41964,21 +41974,11 @@ PrefabInstance:
       propertyPath: nextTile
       value: 
       objectReference: {fileID: 740822478}
-    - target: {fileID: 9159418360538821880, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_Name
-      value: Left 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5341950618207730289, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: otherTileToRotate
       value: 
       objectReference: {fileID: 870531313}
-    - target: {fileID: 9159418360022008628, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5fec77b5982ea3348b5be556ec9afba7, type: 2}
     - target: {fileID: 9159418359089900752, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: m_Enabled

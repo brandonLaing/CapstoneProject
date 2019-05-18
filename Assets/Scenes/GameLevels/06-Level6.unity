@@ -55,8 +55,8 @@ LightmapSettings:
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 10
-    m_Resolution: 0.25
-    m_BakeResolution: 5
+    m_Resolution: 2
+    m_BakeResolution: 40
     m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
@@ -32802,26 +32802,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileStartState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[0]
+    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 284918911}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: nextTile
+      objectReference: {fileID: 1981903237}
+    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 2072581781}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCorrectState
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1981903237}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -32877,16 +32867,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileStartState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[0]
       value: 
-      objectReference: {fileID: 1981903237}
-    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+      objectReference: {fileID: 284918911}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: nextTile
       value: 
-      objectReference: {fileID: 1981903237}
+      objectReference: {fileID: 2072581781}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_Enabled
@@ -33227,10 +33227,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1968781305}
-    - target: {fileID: 2145651557, guid: 11eaf294d1bc9aa419fad4c2f65be362, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 1968781305}
     - target: {fileID: 8220977748826691698, guid: 11eaf294d1bc9aa419fad4c2f65be362,
         type: 3}
       propertyPath: m_Size.y
@@ -33241,6 +33237,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.00000011920929
       objectReference: {fileID: 0}
+    - target: {fileID: 2145651557, guid: 11eaf294d1bc9aa419fad4c2f65be362, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1968781305}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11eaf294d1bc9aa419fad4c2f65be362, type: 3}
 --- !u!1 &900277934
@@ -71906,21 +71906,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: tileStartState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: tileCorrectState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: nextTile
-      value: 
-      objectReference: {fileID: 2072581781}
     - target: {fileID: 5341950617061942734, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: puzzleTiles.Array.size
@@ -71946,6 +71931,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Center
       objectReference: {fileID: 0}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: tileStartState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: tileCorrectState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 2072581781}
     - target: {fileID: 9159418359089900752, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: m_Enabled
@@ -71976,26 +71976,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileStartState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[0]
+    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 284918911}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: nextTile
+      objectReference: {fileID: 217085205}
+    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 2072581781}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCorrectState
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 217085205}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -72041,16 +72031,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileStartState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[0]
       value: 
-      objectReference: {fileID: 217085205}
-    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+      objectReference: {fileID: 284918911}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: nextTile
       value: 
-      objectReference: {fileID: 217085205}
+      objectReference: {fileID: 2072581781}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_Enabled
@@ -75050,34 +75050,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lock
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileStartState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCorrectState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: nextTile
+    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[0]
+      objectReference: {fileID: 727476781}
+    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 284918911}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[1]
-      value: 
-      objectReference: {fileID: 752497140}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[2]
-      value: 
-      objectReference: {fileID: 100504529}
+      objectReference: {fileID: 727476781}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_RootOrder
@@ -75113,16 +75095,34 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -20
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileStartState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: nextTile
       value: 
-      objectReference: {fileID: 727476781}
-    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[0]
       value: 
-      objectReference: {fileID: 727476781}
+      objectReference: {fileID: 284918911}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 752497140}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 100504529}
     - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_Enabled
@@ -75224,10 +75224,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 825765851}
-    - target: {fileID: 2145651557, guid: 11eaf294d1bc9aa419fad4c2f65be362, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 825765851}
     - target: {fileID: 8220977748826691698, guid: 11eaf294d1bc9aa419fad4c2f65be362,
         type: 3}
       propertyPath: m_Size.y
@@ -75238,6 +75234,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.00000011920929
       objectReference: {fileID: 0}
+    - target: {fileID: 2145651557, guid: 11eaf294d1bc9aa419fad4c2f65be362, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 825765851}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11eaf294d1bc9aa419fad4c2f65be362, type: 3}
 --- !u!1 &2079839923 stripped
