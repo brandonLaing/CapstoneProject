@@ -30669,7 +30669,7 @@ PrefabInstance:
     - target: {fileID: 9194272415096794783, guid: 779a539f172bbcf4faba0e3e3f94c327,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9194272415096794776, guid: 779a539f172bbcf4faba0e3e3f94c327,
         type: 3}
@@ -32473,11 +32473,6 @@ PrefabInstance:
       propertyPath: effect
       value: 
       objectReference: {fileID: 634921202}
-    - target: {fileID: 4434745408432447011, guid: 458aa00b9eec1794698e5952e6a027b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4434745407498305833, guid: 458aa00b9eec1794698e5952e6a027b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32542,6 +32537,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434745408432447011, guid: 458aa00b9eec1794698e5952e6a027b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 458aa00b9eec1794698e5952e6a027b5, type: 3}
@@ -32802,16 +32802,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileStartState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[0]
       value: 
-      objectReference: {fileID: 1981903237}
-    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+      objectReference: {fileID: 284918911}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: nextTile
       value: 
-      objectReference: {fileID: 1981903237}
+      objectReference: {fileID: 2072581781}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -32867,26 +32877,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileStartState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[0]
+    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 284918911}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: nextTile
+      objectReference: {fileID: 1981903237}
+    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 2072581781}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCorrectState
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1981903237}
     - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_Enabled
@@ -52458,7 +52458,7 @@ PrefabInstance:
     - target: {fileID: 2580720073641091342, guid: 59e4bb4057b031c40b7529522c65a2e8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2580720073641091343, guid: 59e4bb4057b031c40b7529522c65a2e8,
         type: 3}
@@ -71926,11 +71926,6 @@ PrefabInstance:
       propertyPath: puzzleTiles.Array.data[3]
       value: 
       objectReference: {fileID: 2072581781}
-    - target: {fileID: 9159418360538821880, guid: cdb44600408915c47a118fd735c8841b,
-        type: 3}
-      propertyPath: m_Name
-      value: Center
-      objectReference: {fileID: 0}
     - target: {fileID: 5341950618207730300, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: tileStartState
@@ -71946,6 +71941,11 @@ PrefabInstance:
       propertyPath: nextTile
       value: 
       objectReference: {fileID: 2072581781}
+    - target: {fileID: 9159418360538821880, guid: cdb44600408915c47a118fd735c8841b,
+        type: 3}
+      propertyPath: m_Name
+      value: Center
+      objectReference: {fileID: 0}
     - target: {fileID: 9159418359089900752, guid: cdb44600408915c47a118fd735c8841b,
         type: 3}
       propertyPath: m_Enabled
@@ -71976,16 +71976,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileStartState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[0]
       value: 
-      objectReference: {fileID: 217085205}
-    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+      objectReference: {fileID: 284918911}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: nextTile
       value: 
-      objectReference: {fileID: 217085205}
+      objectReference: {fileID: 2072581781}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -72031,26 +72041,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileStartState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[0]
+    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 284918911}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: nextTile
+      objectReference: {fileID: 217085205}
+    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 2072581781}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCorrectState
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 217085205}
     - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_Enabled
@@ -75050,16 +75050,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lock
       objectReference: {fileID: 0}
-    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileStartState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: tileCorrectState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: nextTile
       value: 
-      objectReference: {fileID: 727476781}
-    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
-        type: 3}
-      propertyPath: m_Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[0]
       value: 
-      objectReference: {fileID: 727476781}
+      objectReference: {fileID: 284918911}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 752497140}
+    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
+      propertyPath: previousTiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 100504529}
     - target: {fileID: 3836681713288225376, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_RootOrder
@@ -75095,34 +75113,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -20
       objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileStartState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: tileCorrectState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: nextTile
+    - target: {fileID: 3836681713872721324, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[0]
+      objectReference: {fileID: 727476781}
+    - target: {fileID: 3836681713872721312, guid: d2acba4945af9754a8c740a32894f250,
+        type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 284918911}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[1]
-      value: 
-      objectReference: {fileID: 752497140}
-    - target: {fileID: 1612737765, guid: d2acba4945af9754a8c740a32894f250, type: 3}
-      propertyPath: previousTiles.Array.data[2]
-      value: 
-      objectReference: {fileID: 100504529}
+      objectReference: {fileID: 727476781}
     - target: {fileID: 3836681712661559881, guid: d2acba4945af9754a8c740a32894f250,
         type: 3}
       propertyPath: m_Enabled
